@@ -225,7 +225,7 @@ if(!loggedin())
 
 	<div class="registerbg">
 		<div class="container-fluid h-100">
-			<div class="row pt-5 mt-5 h-100">
+			<div class="row pt-5 mt-lg-5 h-100">
 				<div class="col-12">
 					<div class="card mx-auto registercard">
 						<div class="card-title text-center registercardtitle">
@@ -394,7 +394,7 @@ if(!loggedin())
 								</div>
 							</form>
 							<div class="text-center">
-								<a href="LoginPage.html" class="registerlinkstyle">Already have an account? Login here</a>
+								<a href="login.php" class="registerlinkstyle">Already have an account? Login here</a>
 							</div>
 						</div>
 					</div>
