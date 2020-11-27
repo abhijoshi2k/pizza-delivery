@@ -11,7 +11,6 @@ if(loggedin())
 else
 {
 	include 'loginform.php';
-	echo 'New here? <a href="register.php">Register now!</a>';
 }
 
 ?>
