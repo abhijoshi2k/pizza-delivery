@@ -353,8 +353,16 @@ body
 .home-menu-btn
 {
 	border-radius: 0;
-	background: #0d2c54;
+	background: #ffc107;
+	color: #000;
+	opacity: 0.8;
+	transition: 0.5s ease-in-out;
 }
+.home-menu-btn:hover{
+	opacity: 1;
+	box-shadow: 2px 2px 4px #000;
+}
+
 
 /*CARDS Section*/
 
@@ -1025,8 +1033,8 @@ body
 
 .capimage{
     position: relative;
-    width: 20%;
-    height: 10%;
+    width: 130px;
+    height: 100px;
 }
 
 .registerinput{
@@ -1371,6 +1379,7 @@ body
 
 .changecard{
 	margin: 2%;
+	margin-bottom: 0;
 	height: auto;
 	padding: 3%;
 	width: 60%;
@@ -1470,24 +1479,6 @@ body
         font-size: 150%;
     }
 }
-
-
-/*MENU Section*/
-
-/*orders section*/
-
-
-
-
-/*orders section ends*/
-
-/*view orders*/
-
-/*view orders ends*/
-/*order details*/
-
-
-/*order deatls ends*/
 
 /*vishak kodethur*/
 
@@ -1761,11 +1752,145 @@ body
 
 /*ORDER PLACED SUCCESSFULLY Section*/
 
-/*vishak kodethur end*/
+/*PLACE ORDER Section*/
 
-/*vineet iyer*/
+.checkboxsize{
+	width: 100%;
+	height: 25px;
+}
 
+.bg-grey{
+	background-color: #CCCCCC; 
+}
 
+.inpshadow{
+	transition: 0.5s ease-in-out;
+}
 
+/*hover*/
+.inpshadow:hover{
+	box-shadow: inset 2px 2px 4px #666;
+}
 
-/*vineet iyer end*/
+/*media*/
+@media(max-width: 993px){
+	.checkboxsize{
+		height: 22px;
+	}
+}
+
+@media(max-width: 762px){
+	.checkboxsize{
+		height: 20px;
+	}
+
+}
+
+@media(max-width: 505px){
+	.checkboxsize{
+		height: 18px;
+	}
+}
+
+@media(max-width: 390px){
+	.checkboxsize{
+		height: 16px;
+	}
+}
+
+/*PLACE ORDER Section*/
+
+/*ALL ORDERS SECTION*/
+
+ol .listdetailsli{
+	list-style-type: decimal-leading-zero;
+}
+
+.listdetailitems{
+	font-size: 140%;
+	padding: 1%; 
+	margin-bottom: 0; 
+	color: #000;
+	text-align: left;
+}
+
+.listdetailsli{
+	transition: 0.5s ease-in-out;
+	margin-right: 3%; 
+	padding-bottom: 2%;
+	margin-top: 1%;
+	border-left: 2px solid #dc3545;
+}
+
+.orderdetaillisbtn{
+	margin-top: 2%;
+    margin-bottom: 2%;
+    transition: 0.5s ease-in-out;
+}
+
+/*hover*/
+.orderdetaillisbtn:hover{
+	box-shadow:  2px 2px 4px #000;
+}
+.listdetailsli:hover{
+	background-color: #EEE;
+}
+
+/*Marker*/
+ol .listdetailsli::marker{
+	color: red;
+	font-size: 140%;
+	font-weight: bold;
+	list-style-type: decimal-leading-zero;
+}
+
+/*media*/
+@media(max-width: 993px){
+	.listdetailitems{
+		font-size: 120%;
+	}
+}
+
+@media(max-width: 762px){
+	.listdetailitems{
+		font-size: 100%;
+	}
+}
+
+@media(max-width: 505px){
+	.listdetailitems{
+		font-size: 98%;
+	}
+
+	.listdetailsli{
+		padding-left: 1%;
+	}
+}
+
+@media(max-width: 390px){
+	.listdetailitems{
+		font-size: 90%;
+	}
+
+	.listdetailsli{
+		padding-left: 1%;
+	}
+}
+
+/*ALL ORDERS SECTION*/
+
+/*INDEX BACKGROUND AND BUTTONS*/
+
+.indexsectionbg{
+	background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4)) ,url('../images/pizzaboard.jpg');
+    width: 100%;
+    height: auto;
+   	background-position: center 80%;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    position: relative;
+    padding-top: 90px;
+    padding-bottom: 3%
+}
+
+/*INDEX BACKGROUND AND BUTTONS*/

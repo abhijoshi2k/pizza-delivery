@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Order Placed Successfully</title>
+	<title>Place Order</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
     <meta name="description" content="Official website of IEEE student chapter of SIES GST, Navi Mumbai.">
@@ -135,79 +135,95 @@
 
     <div id="notnav" class="position-fixed h-100 w-100" onclick="menu();"></div>
 
-
-<!-- ORDER SUCCESS SECTION -->
+<!-- PLACE ORDER SECTION -->
 
 	<div class="ordersuccessbg">
 		<div class="container">
-			<div class="row mx-auto ordersuccessrow">
+			<div class="row mx-auto pb-1 ordersuccessrow">
 				<div class="col-12 ordersuccesstitlecol">
 					<div class="ordersuccesstitlebox text-center">
-						<p><h1 class="ordersuccesstitle">Order Placed Successfully</h1></p>
-					</div>
-				</div>
-				<div class="col-12 ordersuccessdetailscol">
-					<div class="ordersuccessdetails">
-						<p class="ordersuccessdetailsitem"><b>Order ID:</b><span> 250</span></p>
-						<p class="ordersuccessdetailsitem"><b>Order Time Stamp:</b><span> 27/11/2020 12:50:12am IST</span></p>
-						<p class="ordersuccessdetailsitem"><b>Address:</b><span> 1Z/XYZ, BestBldg Brand new road, behind Nowhere, Somewhere(!)
-						</span></p>
-						<p class="ordersuccessdetailsitem"><b>Contact Number Provided:</b><span> 9876543420</span></p>
+						<p><h1 class="ordersuccesstitle">Place Order</h1></p>
 					</div>
 				</div>
 				<div class="col-12 ordersuccesstablecol">
 					<div class="ordersuccesstablebox">
-						<table class="ordersuccesstable">
-							<thead>
-								<tr>
-									<th>Sr no.</th>
-									<th>Item</th>
-									<th>Quantity</th>
-									<th>Net Cost</th>
-									<th>Total</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr class="tableitems">
-									<td>1</td>
-									<td>Cheese Pizza</td>
-									<td>1</td>
-									<td>250</td>
-									<td>250</td>
-								</tr>
-								<tr class="tableitems">
-									<td>2</td>
-									<td>Mexican Green Wave</td>
-									<td>1</td>
-									<td>450</td>
-									<td>450</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-				<div class="col-12 ordersuccesstotalcol">
-					<div class="ordersuccesstotal">
-						<p class="mb-0"><b>Grand Total:<span> 700</span></b></p>
-					</div>
-				</div>
-				<div class="col-12 ordersuccesscancelcol">
-					<br/>
-					<form action="order_cancel.php" method="POST" onsubmit="return confirm('Are you sure you want to cancel your order?');">
-						<div class="ordersuccesscancel text-center">
-							<button type="submit" class="btn btn-dark ordersuccesscancelbtn">Cancel Order</button>
+						<form action="order.php" method="POST" autocomplete="off">
+							<table class="ordersuccesstable">
+								<thead>
+									<tr>
+										<th>Sr no.</th>
+										<th>Item</th>
+										<th>Cost</th>
+										<th>Add to Cart</th>
+										<th>Quantity</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="tableitems">
+										<td>1</td>
+										<td>Cheese Pizza</td>
+										<td>250</td>
+										<td><input type="checkbox" class="checkboxsize " onchange="changeInp(this.getAttribute('item')+'_q',this.checked);" name="item[]" item="<?php echo $menu_item['id']; ?>" value="<?php echo $menu_item['id']; ?>"></td>
+										<td><input type="number" class="form-control" name="<?php echo $menu_item['id'].'_q'; ?>" id="<?php echo $menu_item['id'].'_q'; ?>" value="0" disabled required></td>
+									</tr>
+									<tr class="tableitems">
+										<td>2</td>
+										<td>5 pepper</td>
+										<td>350</td>
+										<td><input type="checkbox" class="checkboxsize " onchange="changeInp(this.getAttribute('item')+'_q',this.checked);" name="item[]" item="<?php echo $menu_item['id']; ?>" value="<?php echo $menu_item['id']; ?>"></td>
+										<td><input type="number" class="form-control" name="<?php echo $menu_item['id'].'_q'; ?>" id="<?php echo $menu_item['id'].'_q'; ?>" value="0" disabled required></td>
+									</tr>
+									<tr class="tableitems">
+										<td>3</td>
+										<td>Mexican Green Wave</td>
+										<td>450</td>
+										<td><input type="checkbox" class="checkboxsize " onchange="changeInp(this.getAttribute('item')+'_q',this.checked);" name="item[]" item="<?php echo $menu_item['id']; ?>" value="<?php echo $menu_item['id']; ?>"></td>
+										<td><input type="number" class="form-control" name="<?php echo $menu_item['id'].'_q'; ?>" id="<?php echo $menu_item['id'].'_q'; ?>" value="0" disabled required></td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
-					</form>
-				</div>
-				<div class="col-12 ordersuccesslinks text-center">
-					<br/><br/><br/>
-					<p><a href="#" class="ordersuccesslinksitem">View all orders</a></p>
-					<p><a href="#" class="ordersuccesslinksitem">Order more!</a></p>
-				</div>
+					</div>
+
+					<div class="col-12 ordersuccesstotalcol">
+						<div class="ordersuccesstotal">
+								<p class="mb-0"><b>Grand Total:<span> 700</span></b></p>
+						</div>
+					</div>
+
+					<div class="col-12">
+						<div class="row bg-grey">	
+							<div class="col-sm-6 col-12  ordersuccessdetailscol">
+								<div class="ordersuccessdetails text-left">
+
+									<p class="ordersuccessdetailsitem"><label for="address"><b>Address: </b></label></p>
+									<textarea name="address" class="form-control inpshadow" id="address" rows="3" cols="40" required></textarea>
+									
+								</div>
+							</div>
+							<div class="col-sm-6 col-12  ordersuccessdetailscol">
+								<div class="ordersuccessdetails text-left">
+
+									<p class="ordersuccessdetailsitem"><label for="contact"><b>Contact Number: </b></label></p>
+									<input type="text" class="form-control inpshadow" id="contact" name="contact" value="9876543210" maxlength="10" required>
+									
+								</div>
+							</div>
+						</div>	
+					</div>
+
+					<div class="text-center col-12 ">
+						<button type="submit" class="btn btn-success ordersuccesscancelbtn"  >Place order</button>
+					</div>
+						
+						
+					</div>
+				</form>	 
 			</div>
 		</div>
 	</div>
-<!-- ORDER SUCCESS SECTION -->
+
+<!-- PLACE ORDER SECTION -->
 
     <script type="text/javascript">
         window.onresize = function() {
@@ -236,6 +252,9 @@
         }
 
     </script>
+
+
+
 
 
 

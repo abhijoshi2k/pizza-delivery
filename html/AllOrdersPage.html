@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Order Placed Successfully</title>
+	<title>All orders</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
     <meta name="description" content="Official website of IEEE student chapter of SIES GST, Navi Mumbai.">
@@ -135,81 +135,95 @@
 
     <div id="notnav" class="position-fixed h-100 w-100" onclick="menu();"></div>
 
-
-<!-- ORDER SUCCESS SECTION -->
+<!-- ALL ORDERS SECTION -->
 
 	<div class="ordersuccessbg">
 		<div class="container">
-			<div class="row mx-auto ordersuccessrow">
+			<div class="row mx-auto pb-1  ordersuccessrow">
 				<div class="col-12 ordersuccesstitlecol">
 					<div class="ordersuccesstitlebox text-center">
-						<p><h1 class="ordersuccesstitle">Order Placed Successfully</h1></p>
+						<p><h1 class="ordersuccesstitle">All Orders</h1></p>
 					</div>
-				</div>
-				<div class="col-12 ordersuccessdetailscol">
-					<div class="ordersuccessdetails">
-						<p class="ordersuccessdetailsitem"><b>Order ID:</b><span> 250</span></p>
-						<p class="ordersuccessdetailsitem"><b>Order Time Stamp:</b><span> 27/11/2020 12:50:12am IST</span></p>
-						<p class="ordersuccessdetailsitem"><b>Address:</b><span> 1Z/XYZ, BestBldg Brand new road, behind Nowhere, Somewhere(!)
-						</span></p>
-						<p class="ordersuccessdetailsitem"><b>Contact Number Provided:</b><span> 9876543420</span></p>
-					</div>
-				</div>
-				<div class="col-12 ordersuccesstablecol">
-					<div class="ordersuccesstablebox">
-						<table class="ordersuccesstable">
-							<thead>
-								<tr>
-									<th>Sr no.</th>
-									<th>Item</th>
-									<th>Quantity</th>
-									<th>Net Cost</th>
-									<th>Total</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr class="tableitems">
-									<td>1</td>
-									<td>Cheese Pizza</td>
-									<td>1</td>
-									<td>250</td>
-									<td>250</td>
-								</tr>
-								<tr class="tableitems">
-									<td>2</td>
-									<td>Mexican Green Wave</td>
-									<td>1</td>
-									<td>450</td>
-									<td>450</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-				<div class="col-12 ordersuccesstotalcol">
-					<div class="ordersuccesstotal">
-						<p class="mb-0"><b>Grand Total:<span> 700</span></b></p>
-					</div>
-				</div>
-				<div class="col-12 ordersuccesscancelcol">
-					<br/>
-					<form action="order_cancel.php" method="POST" onsubmit="return confirm('Are you sure you want to cancel your order?');">
-						<div class="ordersuccesscancel text-center">
-							<button type="submit" class="btn btn-dark ordersuccesscancelbtn">Cancel Order</button>
-						</div>
-					</form>
-				</div>
-				<div class="col-12 ordersuccesslinks text-center">
-					<br/><br/><br/>
-					<p><a href="#" class="ordersuccesslinksitem">View all orders</a></p>
-					<p><a href="#" class="ordersuccesslinksitem">Order more!</a></p>
+				</div> 
+				<div class="col-12 ">
+					<ol>
+						<li class="listdetailsli">
+							<br/>
+							<div class="row listdetailitems">
+							<p class=" col-sm-6 col-12"><b>Order ID: </b><span>28</span></p>  
+							<p class=" col-sm-6 col-12"><b>Status: </b><span>Order Received</span></p>  
+							<p class=" col-sm-6 col-12"><b>Bill Amount: ₹</b><span>700</span></p> 
+							<p class=" col-sm-6 col-12"><b>Order Time: </b><span>27/11/2020 05:02:34pm IST</span></p>
+							</div>
+							<br/>
+							<div class="text-center">
+								<form style="display: inline-block;" action="order_details.php" id="<?php echo $row['order_id']; ?>" method="POST">
+									<input type="hidden" name="order" value="<?php echo $row['order_id']; ?>">
+									<input type="submit" class="btn btn-success orderdetaillisbtn" value="Order Details" form="<?php echo $row['order_id']; ?>">
+								</form>
+								<form style="display: inline-block;" action="order_cancel.php" id="<?php echo $row['order_id'].'_c'; ?>" method="POST" onsubmit="return confirm('Are you sure you want to cancel your order?');">
+									<input type="hidden" name="order" value="<?php echo $row['order_id']; ?>">
+									<input type="submit" class="btn btn-dark orderdetaillisbtn" value="Cancel Order">
+								</form>
+							</div>
+
+						</li>
+						<hr class="my-4">
+						<li class="listdetailsli">
+							<br/>
+							<div class="row listdetailitems">
+							<p class=" col-sm-6 col-12"><b>Order ID: </b><span>28</span></p>  
+							<p class=" col-sm-6 col-12"><b>Status: </b><span>Order Received</span></p>  
+							<p class=" col-sm-6 col-12"><b>Bill Amount: ₹</b><span>700</span></p> 
+							<p class=" col-sm-6 col-12"><b>Order Time: </b><span>27/11/2020 05:02:34pm IST</span></p>
+							</div>
+							<br/>
+
+							<div class="text-center">
+								<form style="display: inline-block;" action="order_details.php" id="<?php echo $row['order_id']; ?>" method="POST">
+									<input type="hidden" name="order" value="<?php echo $row['order_id']; ?>">
+									<input type="submit" class="btn btn-success orderdetaillisbtn" value="Order Details" form="<?php echo $row['order_id']; ?>">
+								</form>
+								<form style="display: inline-block;" action="order_cancel.php" id="<?php echo $row['order_id'].'_c'; ?>" method="POST" onsubmit="return confirm('Are you sure you want to cancel your order?');">
+									<input type="hidden" name="order" value="<?php echo $row['order_id']; ?>">
+									<input type="submit" class="btn btn-dark orderdetaillisbtn" value="Cancel Order">
+								</form>
+							</div>
+
+						</li>
+						<hr class="my-4">
+						<li class="listdetailsli">
+							<br/>
+							<div class="row listdetailitems">
+							<p class=" col-sm-6 col-12"><b>Order ID: </b><span>28</span></p>  
+							<p class=" col-sm-6 col-12"><b>Status: </b><span>Order Received</span></p>  
+							<p class=" col-sm-6 col-12"><b>Bill Amount: ₹</b><span>700</span></p> 
+							<p class=" col-sm-6 col-12"><b>Order Time: </b><span>27/11/2020 05:02:34pm IST</span></p>
+							</div>
+							<br/>
+
+							<div class="text-center">
+								<form style="display: inline-block;" action="order_details.php" id="<?php echo $row['order_id']; ?>" method="POST">
+									<input type="hidden" name="order" value="<?php echo $row['order_id']; ?>">
+									<input type="submit" class="btn btn-success orderdetaillisbtn" value="Order Details" form="<?php echo $row['order_id']; ?>">
+								</form>
+								<form style="display: inline-block;" action="order_cancel.php" id="<?php echo $row['order_id'].'_c'; ?>" method="POST" onsubmit="return confirm('Are you sure you want to cancel your order?');">
+									<input type="hidden" name="order" value="<?php echo $row['order_id']; ?>">
+									<input type="submit" class="btn btn-dark orderdetaillisbtn" value="Cancel Order">
+								</form>
+							</div>
+
+						</li>
+						<hr class="my-4">
+					</ol>
 				</div>
 			</div>
 		</div>
 	</div>
-<!-- ORDER SUCCESS SECTION -->
 
-    <script type="text/javascript">
+<!-- ALL ORDERS SECTION -->
+
+	<script type="text/javascript">
         window.onresize = function() {
             let x = document.getElementById("navbar");
             navchange();
@@ -236,7 +250,6 @@
         }
 
     </script>
-
 
 
 </body>
