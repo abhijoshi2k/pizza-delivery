@@ -1,0 +1,1771 @@
+body
+{
+	top: 0;
+	left: 0;
+	scroll-behavior: smooth;
+	margin: 0;
+	font-size: 100%;
+	font-family: sans-serif;
+	background: #fff;
+}
+
+/*Navbar*/
+.topnav
+{
+	height: 83px;
+	top: 0;
+	left: 0;
+	background: #0D2C54;
+	width: 100%;
+	z-index: 1000;
+	overflow: hidden;
+	transition: 0.5s ease-in-out;
+	font-family: 'Poppins', sans-serif;
+	box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+}
+
+.nav-logo
+{
+	left: 8%;
+}
+
+.nav-logo a:focus
+{
+	outline: none;
+	border: none;
+}
+
+.nav-logo-img
+{
+	height: 70px;
+	margin-top: 7px;
+	width: auto;
+	transition: 0.5s ease-in-out;
+}
+
+.toggle-bars
+{
+	width: 25px;
+	right: 8%;
+	margin-top: 22px;
+	display: none;
+}
+
+.bar
+{
+	height: 2px;
+	margin: 5px 0;
+	width: 100%;
+	background: #fff;
+	transition: 0.7s;
+}
+
+.navbar-ul
+{
+	text-decoration: none;
+	list-style: none;
+	float: right;
+	margin-right: 8%;
+	font-size: 18px;
+	margin-top: 29px;
+	transition: 0.5s ease-in-out;
+}
+
+.navbar-link
+{
+	display: inline-block;
+	padding: 2px 12px;
+	color: #fff;
+	text-decoration: none;
+	position: relative;
+}
+
+.navbar-list
+{
+	position: relative;
+}
+
+.navbar-link-text
+{
+	position: relative;
+}
+
+#reg-link
+{
+	background: #fdca76;
+	color: #0D2C54;
+	margin-left: 6px;
+	padding: 2px 20px;
+}
+
+.navbar-link:hover, .navbar-link:focus
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+.navbar-list .navbar-link-text:after
+{
+	content: '';
+	position: absolute;
+	height: 2px;
+	width: 70%;
+	background: #fdca76;
+	left: 15%;
+	bottom: -4px;
+	transform-origin: right;
+	transform: scaleX(0);
+	transition: transform 0.5s;
+}
+
+.navbar-list.active .navbar-link-text:after
+{
+	content: '';
+	position: absolute;
+	height: 2px;
+	width: 70%;
+	background: #fdca76;
+	left: 15%;
+	bottom: -4px;
+	transform-origin: right;
+	transform: scaleX(1);
+	transition: 0.5s;
+}
+
+.navbar-link:hover .navbar-list .navbar-link-text:after
+{
+	content: '';
+	position: absolute;
+	height: 2px;
+	width: 70%;
+	background: #fdca76;
+	left: 15%;
+	bottom: -4px;
+	transform-origin: left;
+	transform: scaleX(1);
+}
+
+#reg-link:hover .navbar-list .navbar-link-text:after
+{
+	content: '';
+	position: absolute;
+	height: 2px;
+	width: 70%;
+	background: #fdca76;
+	left: 15%;
+	bottom: -4px;
+	transform-origin: right;
+	transform: scaleX(0);
+	transition: transform 0.5s;
+}
+
+@media (max-width: 850px)
+{
+	.topnav
+	{
+		height: auto;
+		max-height: 60px;
+		transition: 1s ease-in;
+	}
+
+	.nav-logo-img
+	{
+		margin-top: 6px;
+		height: 48px;
+	}
+
+	.toggle-bars
+	{
+		margin-top: 17px;
+		display: block;
+		cursor: pointer;
+	}
+
+	.navbar-ul
+	{
+		width: 100%;
+		margin: 60px 0 0;
+		padding: 0;
+		text-align: center;
+	}
+
+	.navbar-link
+	{
+		display: block;
+		margin: 5px 0;
+	}
+
+	#reg-link
+	{
+		margin: 6px 0 10px;
+		margin-left: 0;
+		color: #fff;
+		background: #0D2C54;
+	}
+
+	.navbar-list
+	{
+		padding: 5px;
+	}
+
+	#reg-list
+	{
+		background: #fdca76;
+		color: #0D2C54;
+	}
+}
+
+
+#notnav
+{
+	background: rgba(0,0,0,0.7);
+	z-index: 999;
+	display: none;
+}
+
+
+
+/* HEADER */
+.header{
+	background: linear-gradient(rgba(13,44,84,1),rgba(13,44,84,0.2)), url('../images/banner.jpg');
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	background-position: center 80%;
+	background-repeat: no-repeat;
+	position: relative;
+	font-family: 'Open Sans', sans-serif;
+	color: #ffffff;
+	padding-top: 90px;
+} 
+.header h1{
+	margin:0;
+	font-weight: 700;
+}
+.header p{
+	font-size: 18px;
+	padding-bottom: 10px;
+	font-weight: 400;
+}
+/* h4-get started button */
+.header h4{color:black;
+	font-size: 18px;
+	margin: 5px;
+	padding: 5px;
+}
+.get-started{
+	display: flex;
+	width: fit-content;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.fa-angle-right:before{
+	font-size: 28px;
+	padding: 5px 10px;
+	font-weight: 600;
+}
+.yellow-button{
+	background-color: #fdca76;
+	border: none;
+	border-radius: 0 5px 5px 0;
+}
+.yellow-button:focus
+{
+	outline: none;
+}
+
+
+@media screen and (max-width: 991px){
+	.header{
+		background-position: center;
+	}
+}
+
+@media screen and (max-width: 850px){
+	.header{
+		padding-top: 70px;
+	}
+}
+
+@media screen and (max-width: 560px){
+	.header{
+		background-position: 100%;
+	}
+}
+
+@media screen and (max-width: 510px){
+	.header{
+		background-position: 76%;
+	}
+}
+
+@media screen and (max-width: 415px){
+	.header{
+		background-position: 73%;
+	}
+}
+
+@media screen and (max-width: 383px){
+	.header{
+		background-position: 70%;
+	}
+}
+
+@media screen and (max-width: 353px){
+	.header{
+		background-position: 60%;
+	}
+}
+
+
+
+
+/*CARDS Section*/
+
+
+
+.home-menu-title
+{
+	font-size: 22px;
+}
+
+@media(max-width: 991px)
+{
+	.home-menu-title
+	{
+		font-size: 20px;
+	}
+}
+
+.home-menu-desc
+{
+	font-size: 16px;
+}
+
+@media(max-width: 437px)
+{
+	.home-menu-desc
+	{
+		font-size: 13px;
+	}
+}
+
+.home-menu-btn
+{
+	border-radius: 0;
+	background: #0d2c54;
+}
+
+/*CARDS Section*/
+
+
+
+/*MENU Section*/
+/*-----menu main----*/
+
+.menu_bg{
+	background: linear-gradient(rgba(128,93,85,0.3),rgba(128,62,47,0.4)), url('../images/pizza-background-menu.jpg');
+	width: 100%;
+	height: auto;
+	padding-top: 90px; 
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 5%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center 80%;
+	position: relative;
+}
+
+/*-----row-----*/
+.main_row{
+	margin: 3%;
+	height: auto; 
+	width: 100%;  
+	transition: 0.5s ease-in-out;
+	background: #3367CF;/*#0080FF;/*#4DA6FF;/*#FF462A;/*#FF003A;/*#FC4B35;*/	
+	opacity: 0.8;
+}
+
+.main_row .main_box{
+
+	padding-top: 3%; 
+	padding-bottom: 5%;
+	transition: 0.5s ease-in-out;
+	text-align: center;
+
+}
+
+.main_box .pizza_name{
+	padding-left: 2%;
+	padding-top: 3%;
+	font-family: Constantia;/*"RF-Barbariska", baskerville, dealers, timberline, rigatoni*/
+	color: #6DF21F;/*#ADD911;*/
+	font-size: 130%;
+	height: 10%;
+	transition: 0.5s ease-in-out;
+}
+
+.main_box .topline{
+	border-top: 3px solid white;
+	width: 0;
+	transition: 0.5s ease-in-out;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.main_box .image_box{
+	position: relative;
+	width: 60%;
+	height: 80%;
+	border-radius: 10%;
+	background-color: pink;
+	overflow: hidden;
+	transition: 0.5s ease-in-out;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.image_box .image{
+	width: 100%; 
+	height: 100%;
+}
+
+.image_box .image_overlay{
+	position: absolute;
+	bottom: 0;
+	transition: 0.5s ease;
+	background-color: #000; /*#5C004B*/
+	width:100%;
+	height: 0;
+	overflow: hidden;
+}
+
+.image_box .image_overlay .overlay_text{
+	color: #fff; /*#D8D0DB*/
+	font-size: 60%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+  	-ms-transform: translate(-50%, -50%);
+  	transform: translate(-50%, -50%);
+  	text-align: center;	
+}
+
+.main_box .bottomline{
+	border-bottom: 3px solid white;
+	width: 0;
+	transition: 0.5s ease-in-out;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.main_row .middle_line{
+	padding-top: 3%; 
+	padding-bottom: 3%;
+}
+
+.main_row .middle_line .line{
+	border-left: 7px solid black;
+	height: 0;
+	transition: 0.5s ease-in-out;
+}
+
+.main_row .details_box{
+	padding-top: 6%; 
+	padding-bottom: 6%;
+	transition: 0.5s ease-in-out;
+	text-align: center;
+}
+
+.details_box .btn-outline-warning {
+    color: #f8f9fa;
+    background-color: transparent;
+   	background-image: none;
+    border-color: #f8f9fa;
+}
+
+/*------hover-----*/
+.main_row:hover{
+	background-color: #E9E2FA;
+	box-shadow: 4px 4px 4px black;
+	opacity: 1;	
+}
+
+.main_row:hover .main_box .pizza_name{
+	color: #4FB017;
+}
+
+.main_row .main_box:hover{
+	background: #ffc107;
+}
+
+.main_row .main_box:hover .pizza_name{
+	color: black;
+}
+
+.main_row .main_box:hover .topline{
+	width: 100%;
+}
+
+.main_row .main_box .image_box:hover{
+	box-shadow: 4px 4px 4px  #dc3545;
+}
+
+.main_row .main_box .image_box:hover .image_overlay{
+	height: 40%;
+	opacity: 1;
+	background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.9));
+	/*rgba(202,146,225,0.4),rgba(71,20,92,1)*/
+}
+
+.main_row .main_box:hover .bottomline{
+	width: 100%;
+}
+
+.main_row:hover .middle_line .line{
+	height: 100%;
+}
+
+.main_row:hover .details_box .btn-outline-warning{
+	color: #dc3545;
+	border-color: #dc3545;
+}
+
+.main_row .details_box:hover{
+	background: #000;
+	color: white;
+}
+
+.main_row .details_box:hover .btn-outline-warning{
+	color: #000;
+    background-color: #ffc107;
+    background-image: none;
+    border-color: #ffc107;
+}
+
+/*-----------media query-----------*/
+@media(max-width: 993px) and (min-width: 768px){
+
+	.image_box .image_overlay .overlay_text{
+		font-size: 40%; 
+	}
+}
+
+@media(max-width: 768px){
+
+	.main_box .pizza_name{
+		font-size: 100%;
+		text-align: center;
+	}
+
+	.main_box .image_box{
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.main_row .details_box{
+		text-align: center;
+		width: 100%;
+	}
+}
+
+@media(max-width: 450px){
+	.image_box .image_overlay .overlay_text{
+		font-size: 40%;
+	}
+
+	.menu_bg{
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media(max-width: 350px){
+	.image_box .image_overlay .overlay_text{
+		font-size: 30%;
+	}
+}
+
+/*MENU Section*/
+
+
+/*LOGIN Section*/
+
+.loginbody{
+	background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7));
+	font-family: "Poppins", sans-serif;
+}
+		
+.loginbg{
+	background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url('../images/pizzalog.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center 80%;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	padding-top: 2%;
+}
+
+.logincard{
+	height: auto;
+	padding: 3%;
+	width: 60%;
+	box-shadow: 5px 5px 10px #000;
+			
+}
+
+.logincardtitle{
+	text-transform: uppercase;
+	text-shadow: 1px 1px 2px grey;
+}
+
+.logininput{
+	width: 80%;
+}
+
+.loginbutton{
+	margin-bottom: 2%;
+	width: 80%;
+	border-radius: 23px;
+}
+
+.loginlinkstyle{
+	text-decoration: none;
+	color: black;
+	font-size: 80%;
+}
+
+/*hover*/
+.logininput:hover{
+	box-shadow: inset 1px 1px 5px grey;
+}
+
+.loginbutton:hover{
+	box-shadow: 2px 2px 5px grey;
+}
+
+.loginlinkstyle:hover{
+	text-decoration: none;
+	color: #dc3545;
+}
+
+/*media query*/
+@media(max-width: 993px){
+	.logincard{
+		width: 80%;
+	}
+
+	.logininput{
+		width: 85%;
+	}
+	
+	.loginbutton{
+		width: 85%;	
+	}
+}
+
+@media(max-width: 767px){
+	.logincard{
+		width: 90%;
+	}
+}
+
+@media(max-width: 576px){
+	.logincard{
+		width: 100%;
+		height: 0%;		
+	}
+	
+	.logininput{
+		font-size: 85%;
+		width: 90%;
+	}
+	
+	.loginbutton{
+		width: 90%;	
+	}
+}
+
+/*LOGIN Section*/
+
+/*FORGOT PASSWORD 1 Section*/
+
+.forgot1body{
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7));
+	font-family: "Poppins", sans-serif;
+}
+    	
+.forgotbg{
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url('../images/pizzalog.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 80%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding-top: 2%;
+}
+
+.forgot1card{
+    height: auto;
+    padding: 3%;
+    width: 60%;
+    box-shadow: 5px 5px 10px #000;
+}
+
+.forgot1cardtitle{
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px grey;
+}
+
+.forgotinput{
+    width: 80%;
+}
+
+.forgotbutton{
+    margin-bottom: 2%;
+    width: 80%;
+    border-radius: 23px;
+}
+
+.forgotlinkstyle{
+    text-decoration: none;
+    font-size: 80%;
+    color: #000;
+}
+
+/*Hover*/
+.forgotinput:hover{
+    box-shadow: inset 1px 1px 5px grey;
+}
+
+.forgotbutton:hover{
+    box-shadow: 2px 2px 5px grey; 
+}
+
+.forgotlinkstyle{
+    text-decoration: none;
+    color: #dc3545;
+}
+
+/*Media Query*/
+@media(max-width: 993px){
+    .forgot1card{
+        width: 80%;
+    }
+
+    .forgotinput{
+        width: 85%;
+    }
+            
+    .forgotbutton{
+        width: 85%; 
+    }
+}
+        
+@media(max-width: 767px){
+    .forgot1card{
+        width: 90%;
+    }
+}
+
+@media(max-width: 576px){
+    .forgot1card{
+        width: 100%;
+    }
+    
+    .forgotinput{
+        font-size: 85%;
+        width: 90%;
+    }
+            
+    .forgotbutton{
+        width: 90%; 
+    }
+    
+    .forgot1cardtitle{
+        font-size: 150%;
+    }
+}
+
+/*FORGOT PASSWORD 1 Section*/
+
+/*FORGOT PASSWORD 2 Section*/
+
+.forgot2body{
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7));
+	font-family: "Poppins", sans-serif;
+}
+
+.forgot2bg{
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url('../images/pizzalog.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 80%;
+    position: absolute;
+    width: 100%;
+    height: 150%;
+    padding-top: 2%;
+}
+
+.forgot2card{
+    height: auto;
+    padding: 3%;
+    width: 60%;
+    box-shadow: 5px 5px 10px #000;
+}
+
+.forgot2cardtitle{
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px grey;
+}
+
+.hrline{
+    border-top: 1px solid grey;
+}
+
+.parainfo{
+    background-color: #B0B0B0;
+    padding: 2%; 
+    border-radius: 22px;
+    font-size: 110%;
+}
+
+.forgot2input{
+    width: 80%;
+}
+
+.parabracket{
+    font-size: 100%;
+    width: 80%;
+    color: #6E6E6E;
+}
+
+.forgot2button{
+    margin-bottom: 2%;
+    width: 80%;
+    border-radius: 23px;
+}
+
+.forgot2linkstyle{
+    text-decoration: none;
+    font-size: 80%;
+    color: #000;
+}
+
+/*Hover*/
+.forgot2input:hover{
+    box-shadow: inset 1px 1px 5px grey;
+}
+
+.forgot2button:hover{
+    box-shadow: 2px 2px 5px grey;
+}
+
+.forgot2linkstyle:hover{
+    text-decoration: none;
+    color: #dc3545;
+}
+
+/*Media Query*/
+@media(max-width: 993px){
+    .forgot2card{
+        width: 80%;
+    }
+
+    .forgot2input{
+        width: 85%;
+    }
+    
+    .forgot2button{
+        width: 85%; 
+    }
+}
+
+@media(max-width: 767px){
+    .forgot2card{
+        width: 90%;
+    }
+}
+  
+@media(max-width: 576px){
+    .forgot2card{
+        width: 100%;
+    }
+     
+    .forgot2input{
+        font-size: 85%;
+        width: 90%;
+    }
+            
+    .forgot2button{
+        width: 90%; 
+    }
+     
+    .forgot2cardtitle{
+        font-size: 150%;
+    }
+}
+
+
+/*FORGOT PASSWORD 2 Section*/
+
+/*RESET SUCCESS Section*/
+
+.resetsucbody{
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7));
+	font-family: "Poppins", sans-serif;
+}
+
+.resetsuccessbg{
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url('../images/pizzalog.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 80%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding-top: 2%;
+}
+
+.resetcard{
+    height: auto;
+    padding: 3%;
+    width: 60%;
+    box-shadow: 5px 5px 10px #000;
+}
+
+.resetcardtitle{
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px grey;
+}
+
+.resetlinkstyle{
+    text-decoration: none;
+    font-size: 110%;
+    color: #000;
+}
+
+/*Hover*/
+.resetlinkstyle:hover{
+    text-decoration: none;
+    color: #dc3545;
+}
+
+/*Media Query*/
+@media(max-width: 993px){
+    .resetcard{
+        width: 80%;
+    }
+}
+        
+@media(max-width: 767px){
+    .resetcard{
+        width: 90%;
+    }
+}
+     
+@media(max-width: 576px){
+    .resetcard{
+        width: 100%;
+    }
+     
+    .resetcardtitle{
+        font-size: 150%;
+    }
+}
+
+/*RESET SUCCESS Section*/
+
+/*REGISTER Section*/
+
+.registerbody{
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7));
+	font-family: "Poppins", sans-serif;
+}
+
+.registerbg{
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url('../images/pizzalog.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 80%;
+    position: absolute;
+    width: 100%;
+    height: 350%;
+    padding-top: 0;
+}
+
+.registercard{
+    height: auto;
+    padding: 3%;
+    width: 60%;
+    box-shadow: 5px 5px 10px #000;
+}
+
+.registercardtitle{
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px grey;
+}
+
+.hrline{
+    border-top: 1px solid grey;
+}
+
+.redpara{
+    font-size: 120%;
+    color: #dc3545;
+}
+
+.criteria{
+    color: green;
+}
+
+.capimage{
+    position: relative;
+    width: 20%;
+    height: 10%;
+}
+
+.registerinput{
+    width: 80%;
+}
+
+.changecapbutton{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 30%;
+}
+
+.registerbutton{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 50%;
+    border-radius: 23px;
+}
+
+.registerlinkstyle{
+    text-decoration: none;
+    font-size: 80%;
+    color: #000;
+}
+
+/*Hover*/
+.registerinput:hover{
+    box-shadow: inset 1px 1px 5px grey;
+}
+
+.registerbutton:hover{
+    box-shadow: 2px 2px 5px grey;
+}
+
+.changecapbutton:hover{
+    box-shadow: 2px 2px 5px grey;
+}
+
+.registerlinkstyle:hover{
+    text-decoration: none;
+    color: #dc3545;
+}
+
+/*Media Query*/
+@media(max-width: 993px){
+    .registercard{
+        width: 80%;
+    }
+            
+    .registerinput{
+        width: 85%;
+    }
+            
+    .changecapbutton{
+        width: 50%; 
+    }
+}
+       
+@media(max-width: 767px){
+    .registercard{
+        width: 90%;
+    }
+}
+        
+@media(max-width: 576px){
+    .registercard{
+        width: 100%;
+    }
+          
+    .registerinput{
+        font-size: 85%;
+        width: 90%;
+    }
+      
+    .changecapbutton{
+        width: 80%; 
+    }
+    
+    .registercardtitle{
+        font-size: 150%;
+    }
+}
+
+/*REGISTER Section*/
+
+/*PROFILE PAGE Section*/
+
+.profilebg{
+	background: url('../images/pizza-background-menu.jpg');
+    width: 100%;
+    height: auto;
+   	background-position: center 80%;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    position: relative;
+    padding-top: 90px;
+    padding-bottom: 3%;
+}
+
+.profilerow{
+	padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 3%; 
+  	margin: 2%;
+    height: auto;
+    width: 100%;
+    background-color: #fff; 
+    border-color: transparent;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+.titleboxcol{
+	padding: 0;
+}
+
+.titlebox{
+	padding: 3%;
+    transition: 0.5s ease-in-out;
+	height: auto;
+	width: 100%;
+	background-color: #000; 
+	position: relative;
+}
+
+.profileusername{
+	color: #fff;
+    transition: 0.5s ease-in-out;
+}
+
+.titleoverlay{
+	position: absolute;
+	bottom: 0;
+	transition: 0.5s ease;
+	right: 0;
+	top: 0;
+	background: linear-gradient(to right ,rgba(0,0,0,0.6),rgba(0,0,0,0.9));
+	height: 100%;
+	width: 0;
+	overflow: hidden;
+}
+
+.profileoverlaytext{
+	color: #fff;
+	/*#D8D0DB*/
+	font-size: 120%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+	white-space: nowrap; 
+}
+
+.settingsbox{
+	margin-top: 5%;
+	height: auto;
+	width: 100%;
+	text-align: center;
+	border: 1px solid #CCCCCC;
+	border-radius: 5px;
+	overflow: hidden; 
+	padding-top: 0;
+	padding-bottom: 2%;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.settingstitle{
+	font-size: 110%;
+	background-color: #dc3545;
+	padding-top: 3%;
+	padding-bottom: 3%;
+	padding-left: 0;
+	padding-right: 0; 
+	margin-bottom: 0; 
+	color: #fff;
+}
+
+.settingsitem{
+	background-color: #fff;
+	border-left: 0;
+	padding-top: 4%;
+	padding-bottom: 4%;
+	padding-left: 0;
+	padding-right: 0; 
+	margin: 0;
+	transition: 0.1s ease-in-out;
+	font-size: 100%;
+}
+
+.settingsitemlink{
+	text-decoration: none;
+	color: #000;
+	transition: 0.1s ease-in-out;
+}
+
+.carouselbox{
+	height: auto;
+	width: 100%;
+	background-color: #fff;
+	text-align: center;
+	margin-top: 2.5%;
+}
+
+.profilepizzaimage{
+	height: 350px;
+    width: 100%;
+}
+
+.orderbox{
+	height: auto;
+	width: 100%;
+	padding: 3%;
+	margin-top: 1%;
+	background-color: #fff;
+	color: #000;
+	transition: 0.5s ease-in-out;
+	text-align: center;
+}
+
+.orderboxtext{
+	font-family: 'Poppins';
+    font-size: 110%;
+}
+
+.profileorderbutton{
+	color: #dc3545;
+	background-color: transparent;
+	background-image: none;
+	border-color: #dc3545;
+}
+
+/*Hover*/
+.profilerow:hover{
+	box-shadow: 3px 3px 5px #000;
+}
+
+.titlebox:hover{
+	box-shadow: 3px 0px 4px #777777;
+    background-color: /*#dc3545*/#ffc107;
+}
+
+.titlebox:hover .titleoverlay{
+	width: 60%;
+}
+
+.titlebox:hover .profileusername{
+	color: #000;
+}
+
+.settingsitem:hover{
+	background: linear-gradient(to left,rgba(0,0,0,0.7),rgba(0,0,0,0.9));
+    border-left: 8px solid #ffc107; 
+}
+
+.settingsitem:hover .settingsitemlink{
+	text-decoration: none;
+	color: #ffc107;
+}
+
+.orderbox:hover{
+	background-color: #000;
+    color: #fff;
+}
+
+.orderbox:hover .profileorderbutton{
+	color: #000;
+	background-color: #ffc107;
+	background-image: none;
+	border-color: #ffc107;
+}
+
+/*Media Query*/
+@media(max-width: 985px){
+	.profilepizzaimage{
+		height: 300px;
+	}
+}
+
+@media(max-width: 772px){
+	.profileoverlaytext{
+		font-size: 100%;
+	}
+
+	.profileusername{
+		font-size: 200%;
+	}
+}
+
+@media(max-width: 560px){
+	.titleoverlay{
+		background: linear-gradient(to right ,rgba(0,0,0,1),rgba(0,0,0,1));
+	}
+
+	.titlebox:hover .titleoverlay{
+		width: 100%;
+	}
+
+	.profileusername{
+		text-align: center;
+		font-size: 190%;
+	}
+
+	.profileoverlaytext{
+		font-size: 90%;
+	}
+
+	.profilepizzaimage{
+		height: 250px;
+	}
+
+	.orderbox{
+		padding:4%;
+	}
+
+	.orderboxtext{
+		font-size: 100%;
+	}
+}
+
+/*PROFILE PAGE Section*/
+
+
+
+/*CHANGE FIELDS PAGE Section*/
+
+.changebg{
+	background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url('../images/pizzalog.jpg');
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background-position: center 80%;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	padding-top: 90px;
+	padding-bottom: 3%;
+}
+
+.changecard{
+	margin: 2%;
+	height: auto;
+	padding: 3%;
+	width: 60%;
+	box-shadow: 5px 5px 10px #000;
+}
+
+.changecardtitle{
+	text-transform: uppercase;
+    text-shadow: 1px 1px 2px grey;
+}
+
+.changered{
+	font-size: 120%;
+    color: #dc3545;
+}
+
+.deleteaccgreen{
+	font-size: 120%;
+	color: green
+}
+
+.deleteacccriteria{
+	color: #dc3545;
+}
+
+.changecriteria{
+	color: green
+}
+
+.changebutton{
+	margin-top: 2%;
+	margin-bottom: 2%;
+	width: 50%;
+	border-radius: 23px;
+}
+
+.deleteaccbutton{
+	margin-top: 2%;
+	margin-bottom: 2%;
+	width: 20%;
+	border-radius: 23px;
+}
+
+.changelinkstyle{
+	text-decoration: none;
+   	font-size: 80%;
+	color: #000;
+}
+
+/*hover*/
+.changeinput:hover{
+	box-shadow: inset 1px 1px 5px grey;
+}
+
+.changebutton:hover{
+	box-shadow: 2px 2px 5px grey;
+}
+
+.deleteaccbutton:hover{
+	box-shadow: 2px 2px 5px grey;
+}
+
+.changelinkstyle:hover{
+	text-decoration: none;
+	text-align: center;
+    color: #dc3545;
+}
+
+/*meadia query*/
+@media(max-width: 993px){
+    .changecard{
+        width: 80%;
+    }
+            
+    .changeinput{
+        width: 85%;
+    }
+}
+		       
+@media(max-width: 767px){
+    .changecard{
+        width: 90%;
+    }
+}
+        
+@media(max-width: 576px){
+    .changecard{
+        width: 100%;
+    }
+          
+    .changeinput{
+        font-size: 85%;
+        width: 90%;
+    }
+ 
+    .changecardtitle{
+        font-size: 150%;
+    }
+}
+
+
+/*MENU Section*/
+
+/*orders section*/
+
+
+
+
+/*orders section ends*/
+
+/*view orders*/
+
+/*view orders ends*/
+/*order details*/
+
+
+/*order deatls ends*/
+
+/*vishak kodethur*/
+
+
+.ordersuccessbg{
+	background: url('../images/pizza-background-menu.jpg');
+    width: 100%;
+    height: auto;
+   	background-position: center 80%;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    position: relative;
+    padding-top: 90px;
+    padding-bottom: 3%;
+}
+
+.ordersuccessrow{
+	padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 3%; 
+  	margin: 2%;
+    height: auto;
+    width: 100%;
+    background-color: #fff; 
+    border-color: transparent;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+.ordersuccesstitlecol{
+	padding: 0;
+}
+
+.ordersuccesstitlebox{
+
+	padding: 3%;
+   	transition: 0.5s ease-in-out;
+	height: auto;
+	width: 100%;
+	background-color: #000; 
+	position: relative;
+}
+
+.ordersuccesstitle{
+	color: #fff;
+    transition: 0.5s ease-in-out;
+    text-transform: uppercase;
+}
+
+.ordersuccessdetailscol{
+	padding: 0;
+
+}
+
+.ordersuccessdetails{
+
+	margin-top: 0;
+	height: auto;
+	width: 100%;
+	text-align: left;
+	border: 1px solid #CCCCCC;
+	overflow: hidden; 
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-left: 4%;
+	padding-right: 4%;
+	background-color: #CCCCCC;
+}
+
+.ordersuccessdetailsitem{
+	font-size: 140%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	padding-left: 0;
+	padding-right: 0; 
+	margin-bottom: 0; 
+	color: #000;
+}
+
+.ordersuccesstablecol{
+	padding: 0;
+}
+
+.ordersuccesstablebox{
+	margin-top: 0;
+	height: auto;
+	width: 100%;
+	font-size: 110%;
+	overflow: hidden; 
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-left: 3%;
+	padding-right: 3%;
+	background-color: #fff;
+}
+
+.ordersuccesstable{
+	width: 100%;
+	text-align: center;	
+}
+
+.ordersuccesstable th{
+	font-size: 130%;
+}
+
+.ordersuccesstable th, .tableitems td{
+	padding: 2%;
+	border-bottom: 1px solid #ddd;
+
+}
+.ordersuccesstable .tableitems{
+	transition: 0.1s ease-in-out;
+}
+
+.ordersuccesstotalcol{
+	padding: 0;
+}
+
+.ordersuccesstotal{
+	margin-top: 0;
+	height: auto;
+	width: 100%;
+	font-size: 130%;
+	text-align: center;
+	border: 1px solid #CCCCCC;
+	overflow: hidden; 
+	padding-top: 1%;
+	padding-bottom: 1%;
+	padding-left: 1%;
+	padding-right: 1%;
+	background-color: #dc3545;
+	transition: 0.3s ease-in-out;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.ordersuccesscancelbtn{
+	margin-top: 2%;
+    margin-bottom: 2%;
+    width: 50%;
+    border-radius: 23px;
+}
+
+.ordersuccesslinksitem{
+	text-decoration: none;
+    font-size: 105%;
+    color: #000;
+}
+
+.ordersuccessrow:hover{
+	box-shadow: 3px 3px 5px #000;
+}
+
+.ordersuccesstitlebox:hover{
+	background-color: #333333;
+}
+
+.ordersuccesstitlebox:hover .ordersuccesstitle{
+	text-shadow: 2px 2px 3px #000;
+	color: #ffc107;
+}
+
+.ordersuccesstable .tableitems:hover {
+	background-color: #DDDDDD;
+	color: #dc3545;	
+}
+
+.ordersuccesstotal:hover{
+	background-color: #ffc107;
+	color: #000;
+	box-shadow: inset 4px 4px 6px #D9A407;
+}
+
+.ordersuccesscancelbtn:hover{
+	box-shadow: 2px 2px 5px grey;
+}
+
+.ordersuccesslinksitem:hover{
+	text-decoration: none;
+    color: #dc3545;
+}
+
+@media(max-width: 993px){
+	.ordersuccesstitle{
+		font-size: 170%;
+	}
+
+	.ordersuccessdetailsitem{
+		font-size: 120%;
+	}
+
+	.ordersuccesstablebox{
+		font-size: 100%;
+	}
+
+	.ordersuccesstable th{
+		font-size: 115%;
+	}
+}
+
+@media(max-width: 762px){
+	.ordersuccesstitle{
+		font-size: 150%;
+	}
+
+	.ordersuccessdetailsitem{
+		font-size: 100%;
+	}
+
+	.ordersuccesstablebox{
+		font-size: 90%;
+	}
+
+	.ordersuccesstable th{
+		font-size: 105%;
+	}
+}
+
+@media(max-width: 505px){
+	.ordersuccesstitle{
+		font-size: 130%;
+	}
+
+	.ordersuccessdetailsitem{
+		font-size: 98%;
+	}
+
+	.ordersuccesstablebox{
+		font-size: 90%;
+	}
+
+	.ordersuccesstable th{
+		font-size: 105%;
+	}
+
+	.ordersuccesstotal{
+		font-size: 110%;
+	}
+
+	.ordersuccesstable th, .tableitems td{
+		padding: 1%;
+	}
+}
+
+@media(max-width: 390px){
+	.ordersuccesstitle{
+		font-size: 110%;
+	}
+
+	.ordersuccessdetailsitem{
+		font-size: 86%;
+	}
+
+	.ordersuccesstablebox{
+		font-size: 85%;
+	}
+
+	.ordersuccesstable th{
+		font-size: 95%;
+	}
+
+	.ordersuccesstotal{
+		font-size: 100%;
+	}
+
+	.ordersuccesstable th, .tableitems td{
+		padding: 1%;
+	}
+}
+
+/*ORDER PLACED SUCCESSFULLY Section*/
+
+/*vishak kodethur end*/
+
+/*vineet iyer*/
+
+
+
+
+/*vineet iyer end*/
