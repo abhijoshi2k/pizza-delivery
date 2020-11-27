@@ -57,7 +57,11 @@ if(!loggedin())
 										}
 										else
 										{
-											echo "<b>Sorry, we could not register you at this time. Try again later!</b>";
+											?>
+											<script type="text/javascript">
+												alert('Could Not Register :(');
+											</script>
+											<?php
 										}
 									}
 									else
@@ -73,7 +77,11 @@ if(!loggedin())
 		}
 		else
 		{
-			echo "<b>Please fill all details.</b><br><br>";
+			?>
+			<script type="text/javascript">
+				alert('Please Fill All the Details!');
+			</script>
+			<?php
 		}
 	}
 
@@ -212,6 +220,8 @@ if(!loggedin())
 
     </nav>
 
+    <div id="notnav" class="position-fixed h-100 w-100" onclick="menu();"></div>
+
 
 	<div class="registerbg">
 		<div class="container-fluid h-100">
@@ -279,6 +289,19 @@ if(!loggedin())
 										document.getElementById('username').focus();
 									</script>
 									<?php
+								}
+
+								else if(isset($username_validity) && $username_validity!=true)
+								{
+									?>
+
+									<script type="text/javascript">
+										alert('Given username does not match the criteria!');
+										document.getElementById('username').focus();
+									</script>
+
+									<?php
+
 								}
 								?>
 								<br/>
