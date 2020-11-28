@@ -214,7 +214,7 @@ require 'database_connect.php';
 
                 <div class="col-md-3 col-6">
                     <img src="<?php echo $row['img_src']; ?>" alt="" class="w-100">
-                    <b><h4 class="text-center home-menu-title"><?php echo $row['item']; ?></h4>
+                    <b><h4 class="text-center home-menu-title pt-3"><?php echo $row['item']; ?></h4>
                     <p class="text-center home-menu-desc">
                         <?php echo $arr[0]; ?> and <?php echo $more; ?> more
                     </p></b>
