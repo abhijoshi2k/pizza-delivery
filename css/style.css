@@ -1920,3 +1920,28 @@ ol .listdetailsli::marker{
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
+/*NEW*/
+.orderingdiv{
+	border-bottom: 1px solid #ddd;
+	transition: 0.1s ease-in-out;
+}
+
+.tableitemhover{
+	transition: 0.1s ease-in-out;
+}
+
+.tableitemhover:hover{
+	background-color: #DDDDDD;
+		
+}
+
+.tableitemhover:hover .tableitems{
+	color: #dc3545;
+}
+
+.tableitemhover:hover .orderingdiv{
+	color: #28a745;
+}
+
+/*NEW*/
