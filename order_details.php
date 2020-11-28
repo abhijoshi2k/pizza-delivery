@@ -71,96 +71,307 @@ if(loggedin())
 					$status = 'Cancelled';
 				}
 
-				?><b>Order ID: </b><?php echo $_POST['order'];
-				?><br>
-				<b>Order Status: </b><span id="status"><?php echo $status;
-				?></span><br>
-				<b>Order received at: </b><?php echo $row['order_time'];
-				?><br><br><?php
 
-				?>
 
-				<table>
-					<tr>
-						<th>Sr.No.</th>
-						<th>Item</th>
-						<th>Cost/Item</th>
-						<th>Quantity</th>
-						<th>Item Total</th>
-					</tr>
-					<?php
+?>
 
-					for($i=0; $i<$count; $i++)
-					{
-						?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Order Details</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="description" content="Official website of IEEE student chapter of SIES GST, Navi Mumbai.">
+    <meta name="keywords" content="IEEE, ieee, sies, gst, siesgst, official, student, website, home">
+    <meta name="author" content="IEEE SIES GST Student Chapter">
 
-						<tr>
-							<td><?php echo ($i+1); ?></td>
-							<td><?php echo $item[$i]; ?></td>
-							<td><?php echo $cost[$i]; ?></td>
-							<td><?php echo $quantity[$i]; ?></td>
-							<td><?php echo ((int)$cost[$i] * (int)$quantity[$i]); ?></td>
-						</tr>
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#000">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+    <!-- //Meta tag Keywords -->
+    
+    <!-- Bootstrap -->
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Google Fonts -->
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <!-- Functions -->
+    <script type="text/javascript">
+        
+        function menu(){
+
+            let x = document.getElementById("navbar");
+
+            if(x.style.maxHeight == '60px' || x.style.maxHeight == '' || x.style.height == '60px'){
+                x.style.maxHeight = " 1000px";
+                document.getElementById('bar1').style.transform = 'rotate(-45deg) translate(-3px,7px)';
+                document.getElementById('bar3').style.transform = 'rotate(45deg) translate(-3px,-7px)';
+                document.getElementById('bar2').style.opacity = '0';
+                document.getElementById('notnav').style.display = 'block';
+                setTimeout(function() {
+                    x.style.transition = '';
+                    x.style.transition = '0.5s cubic-bezier(0, 1, 0, 1)';
+                }, 500);
+            }
+            else
+            {
+                x.style.maxHeight = "60px";
+                document.getElementById('bar1').style.transform = 'rotate(0deg) translate(0px,0px)';
+                document.getElementById('bar3').style.transform = 'rotate(0deg) translate(0px,0px)';
+                document.getElementById('bar2').style.opacity = '1';
+                document.getElementById('notnav').style.display = 'none';
+                setTimeout(function() {
+                    x.style.transition = '';
+                    x.style.transition = '1s ease-in;';
+                }, 500);
+            }
+        }
+
+        function navchange() {
+            if(window.innerWidth > 850 && window.scrollY > 2)
+            {
+                document.getElementById('nav-logo-image').style.marginTop = '5px';
+                document.getElementById('nav-logo-image').style.height = '60px';
+                document.getElementById('navbar-ul').style.marginTop = '20px';
+                document.getElementById('navbar').style.height = '70px';
+            }
+
+            else if(window.innerWidth > 850 && window.scrollY <= 2)
+            {
+                document.getElementById('nav-logo-image').style.marginTop = '7px';
+                document.getElementById('nav-logo-image').style.height = '70px';
+                document.getElementById('navbar-ul').style.marginTop = '29px';
+                document.getElementById('navbar').style.height = '83px';
+            }
+
+            else
+            {
+                document.getElementById('nav-logo-image').style.marginTop = '6px';
+                document.getElementById('nav-logo-image').style.height = '40px';
+                document.getElementById('navbar-ul').style.marginTop = '60px';
+                document.getElementById('navbar').style.height = 'auto';
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+
+    <nav class="position-fixed topnav" id="navbar">
+
+        <div class="nav-logo position-absolute">
+            <a href="#"><img src="images/15b78dc9-cf77-49fe-97f4-fe2b4e5fb36b_200x200.png" class="nav-logo-img" id="nav-logo-image" alt=""></a>
+        </div>
+
+        <div class="toggle-bars position-absolute" onclick="menu();">
+            <div class="bar-1 bar" id="bar1"></div>
+            <div class="bar-2 bar" id="bar2"></div>
+            <div class="bar-3 bar" id="bar3"></div>
+        </div>
+
+        <ul class="navbar-ul mb-0" id="navbar-ul">
+            <a href="#" class="navbar-link">
+                <li class="navbar-list active"><div class="navbar-link-text d-inline">Home</div></li>
+            </a>
+            <a href="#" class="navbar-link">
+                <li class="navbar-list"><div class="navbar-link-text d-inline">About Us</div></li>
+            </a>
+            <a href="#" class="navbar-link">
+                <li class="navbar-list"><div class="navbar-link-text d-inline">Courses</div></li>
+            </a>
+            <a href="#" class="navbar-link">
+                <li class="navbar-list"><div class="navbar-link-text d-inline">Login</div></li>
+            </a>
+            <a href="#" class="navbar-link" id="reg-link">
+                <li class="navbar-list" id="reg-list"><div class="navbar-link-text d-inline">Register</div></li>
+            </a>
+        </ul>
+
+    </nav>
+
+
+    <div id="notnav" class="position-fixed h-100 w-100" onclick="menu();"></div>
+
+
+<!-- ORDER SUCCESS SECTION -->
+
+	<div class="ordersuccessbg ">
+		<div class="container">
+			<div class="row mx-auto ordersuccessrow">
+				<div class="col-12 ordersuccesstitlecol">
+					<div class="ordersuccesstitlebox text-center">
+						<p><h1 class="ordersuccesstitle">Order Details</h1></p>
+					</div>
+				</div>
+				<div class="col-12 ordersuccessdetailscol">
+					<div class="ordersuccessdetails">
+						<p class="ordersuccessdetailsitem"><b>Order ID:</b><span> <?php echo $_POST['order']; ?></span></p>
+						<p class="ordersuccessdetailsitem"><b>Order status: </b><span id="status"><?php echo $status; ?></span></p>
+						<p class="ordersuccessdetailsitem"><b>Order recieved at:</b><span> <?php echo $row['order_time']; ?></span></p>						
+					</div>
+				</div>
+				<div class="col-12 ordersuccesstablecol">
+					<div class="ordersuccesstablebox">
+						<table class="ordersuccesstable">
+							<thead>
+								<tr>
+									<th>Sr no.</th>
+									<th>Item</th>
+									<th>Quantity</th>
+									<th>Net Cost</th>
+									<th>Total</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php
+
+								for($i=0; $i<$count; $i++)
+								{
+									?>
+									<tr class="tableitems">
+										<td><?php echo ($i+1); ?></td>
+										<td><?php echo $item[$i]; ?></td>
+										<td><?php echo $cost[$i]; ?></td>
+										<td><?php echo $quantity[$i]; ?></td>
+										<td><?php echo ((int)$cost[$i] * (int)$quantity[$i]); ?></td>
+									</tr>
+									<?php
+								}
+
+								?>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="col-12 ordersuccesstotalcol">
+					<div class="ordersuccesstotal">
+						<p class="mb-0"><b>Grand Total:<span> <?php echo $row['order_total']; ?></span></b></p>
+					</div>
+				</div>
+                <div class="col-12 ordersuccessdetailscol">
+                    <br/>
+                    <div class="ordersuccessdetails">
+                        <p class="ordersuccessdetailsitem"><b>Address:</b><br><span><?php echo nl2br("$row[address]"); ?></span></p>
+                        <p class="ordersuccessdetailsitem"><b>Contact Number Provided:</b><span> <?php echo $row['contact']; ?></span></p>
+                    </div>
+                </div>
+				<div class="col-12 ordersuccesscancelcol">
+					<br/>
+					<span id="cancel">
 
 						<?php
-					}
 
-					?>
-				</table>
+						if($status == 'Order Received')
+						{
+							?>
+							<form action="order_cancel.php" id="<?php echo $_POST['order'].'_c'; ?>" method="POST" onsubmit="return confirm('Are you sure you want to cancel your order?');">
+								<div class="ordersuccesscancel text-center">
+									<input type="hidden" name="order" value="<?php echo $_POST['order']; ?>">
+									<button type="submit" class="btn  btn-dark ordersuccesscancelbtn" id="sub-btn" form="<?php echo $_POST['order'].'_c'; ?>">Cancel Order</button>
+								</div>
+							</form>
+							<?php
+						}
 
-				<h2>Total: <?php echo $row['order_total']; ?></h2>
-				<p><b>Address:</b><br><?php echo nl2br("$row[address]"); ?></p>
-				<p><b>Contact: </b><?php echo $row['contact']; ?></p>
+						?>
+					</span>
 
-				<span id="cancel">
+					<script type="text/javascript">
+						setInterval(function() {
 
-				<?php
+							var xmlhttp = new XMLHttpRequest();
+						    xmlhttp.onreadystatechange = function() {
+						    	if (this.readyState == 4 && this.status == 200) {
+						    		var response = this.responseText;
 
-				if($status == 'Order Received')
-				{
-					?>
+						    		response = JSON.parse(response);
 
-					<form action="order_cancel.php" id="<?php echo $_POST['order'].'_c'; ?>" method="POST" onsubmit="return confirm('Are you sure you want to cancel your order?');">
-						<input type="hidden" name="order" value="<?php echo $_POST['order']; ?>">
-						<input type="submit" id="sub-btn" value="Cancel Order" form="<?php echo $_POST['order'].'_c'; ?>">
-					</form>
+						    		document.getElementById("status").innerHTML = response.status;
 
-					<?php
-				}
+						    		if(response.status == 'Order Received')
+						    		{
+						    			document.getElementById('cancel').innerHTML = '<form action="order_cancel.php" id="' + response.id + '_c' + '" method="POST" onsubmit="return confirm(\'Are you sure you want to cancel your order?\');"><div class="ordersuccesscancel text-center"><input type="hidden" name="order" value="' + response.id + '"><button type="submit" class="btn  btn-dark ordersuccesscancelbtn" id="sub-btn">Cancel Order</button></div></form>';
+						    		}
+						    		else
+						    		{
+						    			document.getElementById('cancel').innerHTML = '';
+						    		}
+						      	}
+						    };
+						    xmlhttp.open("GET","update_orders.php?req=2",true);
+						    xmlhttp.send();
 
-				?>
+						}, 10000);
+					</script>
 
-				</span>
 
-				<script type="text/javascript">
-					setInterval(function() {
+	                <div class="col-12 ordersuccesslinks text-center">
+	                    <p><a href="view_orders.php" class="ordersuccesslinksitem">View all orders</a></p>
+	                </div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+<!-- ORDER SUCCESS SECTION -->
 
-						var xmlhttp = new XMLHttpRequest();
-					    xmlhttp.onreadystatechange = function() {
-					    	if (this.readyState == 4 && this.status == 200) {
-					    		var response = this.responseText;
+    <script type="text/javascript">
+        window.onresize = function() {
+            let x = document.getElementById("navbar");
+            navchange();
+            if(window.innerWidth > 850)
+            {
+                x.style.maxHeight = "1000px";
+                document.getElementById('bar1').style.transform = 'rotate(0deg) translate(0px,0px)';
+                document.getElementById('bar3').style.transform = 'rotate(0deg) translate(0px,0px)';
+                document.getElementById('bar2').style.opacity = '1';
+                document.getElementById('notnav').style.display = 'none';
+            }
+            else
+            {
+                x.style.maxHeight = "60px";
+                document.getElementById('bar1').style.transform = 'rotate(0deg) translate(0px,0px)';
+                document.getElementById('bar3').style.transform = 'rotate(0deg) translate(0px,0px)';
+                document.getElementById('bar2').style.opacity = '1';
+                document.getElementById('notnav').style.display = 'none';
+            }
+        };
 
-					    		response = JSON.parse(response);
+        window.onscroll = function() {
+            navchange();
+        }
 
-					    		document.getElementById("status").innerHTML = response.status;
+    </script>
 
-					    		if(response.status == 'Order Received')
-					    		{
-					    			document.getElementById('cancel').innerHTML = '<form style="display: inline-block;" action="order_cancel.php" id="' + response.id + '_c' + '" method="POST" onsubmit="return confirm(\'Are you sure you want to cancel your order?\');"><input type="hidden" name="order" value="' + response.id + '"><input type="submit" value="Cancel Order"></form>';
-					    		}
-					    		else
-					    		{
-					    			document.getElementById('cancel').innerHTML = '';
-					    		}
-					      	}
-					    };
-					    xmlhttp.open("GET","update_orders.php?req=2",true);
-					    xmlhttp.send();
 
-					}, 10000);
-				</script>
 
-				<?php
+</body>
+</html>
+
+
+<?php
+
+
 			}
 		}
 		else
