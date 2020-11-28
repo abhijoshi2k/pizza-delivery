@@ -112,7 +112,7 @@ require 'core_login.php';
     <nav class="position-fixed topnav" id="navbar">
 
         <div class="nav-logo position-absolute">
-            <a href="#"><img src="images/15b78dc9-cf77-49fe-97f4-fe2b4e5fb36b_200x200.png" class="nav-logo-img" id="nav-logo-image" alt=""></a>
+            <a href="index.php"><img src="images/15b78dc9-cf77-49fe-97f4-fe2b4e5fb36b_200x200.png" class="nav-logo-img" id="nav-logo-image" alt=""></a>
         </div>
 
         <div class="toggle-bars position-absolute" onclick="menu();">
@@ -122,21 +122,39 @@ require 'core_login.php';
         </div>
 
         <ul class="navbar-ul mb-0" id="navbar-ul">
-            <a href="#" class="navbar-link">
-                <li class="navbar-list active"><div class="navbar-link-text d-inline">Home</div></li>
+            <a href="index.php" class="navbar-link">
+                <li class="navbar-list"><div class="navbar-link-text d-inline">Home</div></li>
             </a>
-            <a href="#" class="navbar-link">
-                <li class="navbar-list"><div class="navbar-link-text d-inline">About Us</div></li>
+            <a href="menu.php" class="navbar-link">
+                <li class="navbar-list"><div class="navbar-link-text d-inline">Our Menu</div></li>
             </a>
-            <a href="#" class="navbar-link">
-                <li class="navbar-list"><div class="navbar-link-text d-inline">Courses</div></li>
+            <a href="order.php" class="navbar-link">
+                <li class="navbar-list"><div class="navbar-link-text d-inline">Order Now</div></li>
             </a>
-            <a href="#" class="navbar-link">
-                <li class="navbar-list"><div class="navbar-link-text d-inline">Login</div></li>
-            </a>
-            <a href="#" class="navbar-link" id="reg-link">
-                <li class="navbar-list" id="reg-list"><div class="navbar-link-text d-inline">Register</div></li>
-            </a>
+            <?php
+            if(loggedin())
+            {
+                ?>
+                <a href="view_orders.php" class="navbar-link">
+                    <li class="navbar-list"><div class="navbar-link-text d-inline">View Orders</div></li>
+                </a>
+                <a href="profile.php" class="navbar-link">
+                    <li class="navbar-list active"><div class="navbar-link-text d-inline">Profile</div></li>
+                </a>
+                <a href="logout.php" class="navbar-link" id="reg-link">
+                    <li class="navbar-list" id="reg-list"><div class="navbar-link-text d-inline">Logout</div></li>
+                </a>
+                <?php
+            }
+            else
+            {
+                ?>
+                <a href="login.php" class="navbar-link" id="reg-link">
+                    <li class="navbar-list" id="reg-list"><div class="navbar-link-text d-inline">Login</div></li>
+                </a>
+                <?php
+            }
+            ?>
         </ul>
 
     </nav>
@@ -324,7 +342,7 @@ if(isset($_GET['change']) || isset($_POST['new_username']) || isset($_POST['new_
 								<h2>Change Password</h2>
 							</div>
 							<div class="card-text ">
-	                            <form action="change_info.php" method="POST">
+	                            <form action="change_info.php" method="POST" autocomplete="off">
 
 	                            	<?php 
 
@@ -403,7 +421,7 @@ if(isset($_GET['change']) || isset($_POST['new_username']) || isset($_POST['new_
 								<h2>Change Name</h2>
 							</div>
 							<div class="card-text ">
-								<form action="change_info.php" method="POST">
+								<form action="change_info.php" method="POST" autocomplete="off">
 									<p class="changered"><label for="firstname"><i class="fa fa-user" aria-hidden="true"></i> New Firstname:</label></p>
 									<input type="text" name="firstname" id="firstname" class="form-control changeinput" placeholder="Firstname" maxlength="40" required>
 									<br/>
@@ -461,7 +479,7 @@ if(isset($_GET['change']) || isset($_POST['new_username']) || isset($_POST['new_
 								<h2>Change Mobile Number</h2>
 							</div>
 							<div class="card-text ">
-								<form action="change_info.php" method="POST">
+								<form action="change_info.php" method="POST" autocomplete="off">
 									<p class="changered"><label for="contact"><i class="fa fa-mobile" aria-hidden="true"></i> Mobile Number (without country code):</label></p>
 									<input type="text" name="contact" id="contact" class="form-control changeinput" placeholder="Mobile Number" maxlength="10" required>
 
@@ -533,7 +551,7 @@ if(isset($_GET['change']) || isset($_POST['new_username']) || isset($_POST['new_
 								<h2>Change Security Question</h2>
 							</div>
 							<div class="card-text ">
-								<form action="change_info.php" method="POST">
+								<form action="change_info.php" method="POST" autocomplete="off">
 									<p class="changered"><label for="sec_qt"><i class="fa fa-question" aria-hidden="true"></i> Enter New Security Question:</label></p>
 									<input type="text" id="sec_qt" name="sec_qt" class="form-control changeinput" placeholder="Enter Security Question" maxlength="100" required><br/>
 									<p class="changered"><label for="sec_ans"><i class="fa fa-arrow-right" aria-hidden="true"></i> Enter Answer:</label></p>

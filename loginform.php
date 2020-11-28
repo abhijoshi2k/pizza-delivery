@@ -141,7 +141,9 @@ else if(isset($_SESSION['flag']) && $_SESSION['flag']=='9')
 								<input type="submit" class="btn btn-warning loginbutton" value="Login">
 								<br/>
 								<a href="change_info.php?change=1" class="loginlinkstyle">Forgot Password?</a><br/><br/>
-								<h5 class="my-0 py-0"><a href="register.php" class="loginlinkstyle">New here? Register now.</a></h5>
+								<h5 class="my-0 py-0"><a href="register.php" class="loginlinkstyle">New here? Register now!</a></h5>
+								<br>
+								<h5 class="my-0 py-0"><a href="index.php" class="loginlinkstyle">Go back to home page</a></h5>
 							</form>
 						</div>
 					</div>

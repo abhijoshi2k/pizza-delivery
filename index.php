@@ -3,18 +3,15 @@
 require 'core_login.php';
 require 'database_connect.php';
 
-if(loggedin())
-{
-	$query = "SELECT order_id, order_total, status, order_time FROM `orders` WHERE user_id=".$_SESSION['user_id']." ORDER BY order_id DESC";
-	$query_run = mysqli_query($connect,$query);
-
-	?>
+?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>All orders</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bomino's</title>
+
+	<!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
     <meta name="description" content="Official website of IEEE student chapter of SIES GST, Navi Mumbai.">
     <meta name="keywords" content="IEEE, ieee, sies, gst, siesgst, official, student, website, home">
@@ -49,6 +46,7 @@ if(loggedin())
     <link rel="shortcut icon" href="images/favicon.png">
     <link rel="icon" href="images/favicon.png">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
     <!-- Functions -->
     <script type="text/javascript">
         
@@ -126,7 +124,7 @@ if(loggedin())
 
         <ul class="navbar-ul mb-0" id="navbar-ul">
             <a href="index.php" class="navbar-link">
-                <li class="navbar-list"><div class="navbar-link-text d-inline">Home</div></li>
+                <li class="navbar-list active"><div class="navbar-link-text d-inline">Home</div></li>
             </a>
             <a href="menu.php" class="navbar-link">
                 <li class="navbar-list"><div class="navbar-link-text d-inline">Our Menu</div></li>
@@ -139,7 +137,7 @@ if(loggedin())
             {
                 ?>
                 <a href="view_orders.php" class="navbar-link">
-                    <li class="navbar-list active"><div class="navbar-link-text d-inline">View Orders</div></li>
+                    <li class="navbar-list"><div class="navbar-link-text d-inline">View Orders</div></li>
                 </a>
                 <a href="profile.php" class="navbar-link">
                     <li class="navbar-list"><div class="navbar-link-text d-inline">Profile</div></li>
@@ -165,128 +163,96 @@ if(loggedin())
 
     <div id="notnav" class="position-fixed h-100 w-100" onclick="menu();"></div>
 
-<!-- ALL ORDERS SECTION -->
 
-	<div class="ordersuccessbg">
-		<div class="container">
-			<div class="row mx-auto pb-1  ordersuccessrow">
-				<div class="col-12 ordersuccesstitlecol">
-					<div class="ordersuccesstitlebox text-center">
-						<p><h1 class="ordersuccesstitle">All Orders</h1></p>
-					</div>
-				</div> 
-				<div class="col-12 ">
-					<ol>
 
-						<?php
 
-						while($row = mysqli_fetch_assoc($query_run))
-						{
-							if($row['status']=='0')
-							{
-								$status = 'Order Received';
-							}
-							else if($row['status']=='1')
-							{
-								$status = 'Preparing';
-							}
-							else if($row['status']=='2')
-							{
-								$status = 'Awaiting Delivery';
-							}
-							else if($row['status']=='3')
-							{
-								$status = 'Out for Delivery';
-							}
-							else if($row['status']=='4')
-							{
-								$status = 'Delivered';
-							}
-							else if($row['status']=='5' || $row['status']=='6')
-							{
-								$status = 'Cancelled';
-							}
-							?>
 
-						<li class="listdetailsli">
-							<br/>
-							<div class="row listdetailitems">
-							<p class=" col-sm-6 col-12"><b>Order ID: </b><span><?php echo $row['order_id']; ?></span></p>  
-							<p class=" col-sm-6 col-12"><b>Status: </b><span class="order-status"><?php echo $status; ?></span></p>  
-							<p class=" col-sm-6 col-12"><b>Bill Amount: ₹</b><span><?php echo $row['order_total']; ?></span></p> 
-							<p class=" col-sm-6 col-12"><b>Order Time: </b><span><?php echo $row['order_time']; ?></span></p>
-							</div>
-							<br/>
-							<div class="text-center">
-								<form style="display: inline-block;" action="order_details.php" id="<?php echo $row['order_id']; ?>" method="POST">
-									<input type="hidden" name="order" value="<?php echo $row['order_id']; ?>">
-									<input type="submit" class="btn btn-success orderdetaillisbtn" value="Order Details" form="<?php echo $row['order_id']; ?>">
-								</form>
 
-								<span class="cancel-span">
-									<?php
+    <!--Header-->
+    <div class="header">
+        <div class="container">
+            <h1 class="pt-5 pb-3">Get amazing pizzas at extremely low price!</h1>
+            <p>Make your day by ordering our fantastic pizzas right at your doorstep.</p>
+            <p>What are you waiting for?</p>
+            <div class="pb-5">
+                <div class="get-started bg-white"><h4>Order Now</h4><button class = "yellow-button"><i class = "fa fa-angle-right"></i></button></div>
+            </div>
+        </div>
+    </div>
+    <!--Header Ends-->
 
-									if($status == 'Order Received')
-									{
-										?>
-										<form style="display: inline-block;" action="order_cancel.php" id="<?php echo $row['order_id'].'_c'; ?>" method="POST" onsubmit="return confirm('Are you sure you want to cancel your order?');">
-											<input type="hidden" name="order" value="<?php echo $row['order_id']; ?>">
-											<input type="submit" class="btn btn-dark orderdetaillisbtn" value="Cancel Order">
-										</form>
-										<?php
-									}
 
-									?>
-								</span>
-							</div>
 
-						</li>
-						<hr class="my-4">
-						<?php
-						}
 
-						?>
-					</ol>
 
-					<script type="text/javascript">
-						setInterval(function() {
+<!-- CARDS Section -->
 
-							var xmlhttp = new XMLHttpRequest();
-						    xmlhttp.onreadystatechange = function() {
-						    	if (this.readyState == 4 && this.status == 200) {
-						    		var response = this.responseText;
-						    		response = JSON.parse(response);
 
-						    		var cancel = document.getElementsByClassName('cancel-span');
-						    		var stat = document.getElementsByClassName('order-status');
+<div class="indexsectionbg">
+<div class="container">
+    <h1 class="text-white text-center pb-5"><b>Our Speciality!</b></h1>
+    <div class="row text-white">
+        <?php
 
-						    		for(var i=0; i<cancel.length; i++)
-						    		{
-						    			stat[i].innerHTML = response[i].status;
-						    			if(response[i].status == 'Order Received')
-						    			{
-						    				cancel[i].innerHTML = '<form style="display: inline-block;" action="order_cancel.php" id="' + response[i].id + '_c' + '" method="POST" onsubmit="return confirm(\'Are you sure you want to cancel your order?\');"><input type="hidden" name="order" value="' + response[i].id + '"><input type="submit" class="btn btn-dark orderdetaillisbtn" value="Cancel Order"></form>';
-						    			}
-						    			else
-						    			{
-						    				cancel[i].innerHTML = '';
-						    			}
-						    		}
-						      	}
-						    };
-						    xmlhttp.open("GET","update_orders.php?req=1",true);
-						    xmlhttp.send();
+        $query = "SELECT * FROM menu WHERE included = 1";
 
-						}, 10000);
-					</script>
-				</div>
-			</div>
-		</div>
-	</div>
+        $query_run = mysqli_query($connect,$query);
 
-<!-- ALL ORDERS SECTION -->
+        $count = 0;
+        while($row = mysqli_fetch_assoc($query_run))
+        {
+            if($count<4)
+            {
 
-	<script type="text/javascript">
+                $count++;
+
+                $arr = explode(", ",$row['ingredients']);
+
+                $more = count($arr) - 1;
+
+                ?>
+
+                <div class="col-md-3 col-6">
+                    <img src="<?php echo $row['img_src']; ?>" alt="" class="w-100">
+                    <b><h4 class="text-center home-menu-title"><?php echo $row['item']; ?></h4>
+                    <p class="text-center home-menu-desc">
+                        <?php echo $arr[0]; ?> and <?php echo $more; ?> more
+                    </p></b>
+                </div>
+
+                <?php
+            }
+        }
+
+        ?>
+    </div>
+    <p class="text-center"><a href="menu.php" class="btn mt-3 home-menu-btn btn-lg">View Full Menu</a></p>
+</div>
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+<!-- //CARDS Section -->
+
+
+<!-- //footer section ends -->
+
+
+    <script type="text/javascript">
         window.onresize = function() {
             let x = document.getElementById("navbar");
             navchange();
@@ -311,18 +277,7 @@ if(loggedin())
         window.onscroll = function() {
             navchange();
         }
-
     </script>
-
 
 </body>
 </html>
-
-	<?php
-}
-else
-{
-	header('Location: login.php');
-}
-
-?>

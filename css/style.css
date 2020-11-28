@@ -9,6 +9,11 @@ body
 	background: #fff;
 }
 
+textarea
+{
+	resize: none;
+}
+
 /*Navbar*/
 .topnav
 {
@@ -493,6 +498,21 @@ body
     background-color: transparent;
    	background-image: none;
     border-color: #f8f9fa;
+}
+
+.main_row .details_box div b
+{
+	color: #fff;
+}
+
+.main_row:hover .details_box div b
+{
+	color: #000;
+}
+
+.main_row .details_box:hover div b
+{
+	color: #fff;
 }
 
 /*------hover-----*/
