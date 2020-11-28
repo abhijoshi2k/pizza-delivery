@@ -1902,7 +1902,7 @@ ol .listdetailsli::marker{
 /*INDEX BACKGROUND AND BUTTONS*/
 
 .indexsectionbg{
-	background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4)) ,url('../images/pizzaboard.jpg');
+	background: linear-gradient(rgba(28,41,52,1),rgba(0,0,0,0.2),rgba(0,0,0,1)) ,url('../images/pizzaboard.jpg');
     width: 100%;
     height: auto;
    	background-position: center 80%;
@@ -1914,3 +1914,14 @@ ol .listdetailsli::marker{
 }
 
 /*INDEX BACKGROUND AND BUTTONS*/
+
+
+
+/*Footer*/
+
+.footer
+{
+	background: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.8),rgba(0,0,0,0.8),rgba(0,0,0,0.8)) ,url('../images/footer.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}

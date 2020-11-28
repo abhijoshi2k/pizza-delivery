@@ -233,7 +233,41 @@ require 'database_connect.php';
 
 
 
-
+<footer class="footer pt-4 pb-4">
+    <div class="container text-white">
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 col-12">
+                <h3 class="text-center">Our Branches</h3>
+                <p class="text-center">
+                    Mumbai
+                    <br>
+                    Chennai
+                    <br>
+                    Bangalore
+                </p>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-12 pt-sm-0 pt-3">
+                <h3 class="text-center">Reach Out to Us</h3>
+                <p class="text-center pt-2">
+                    <i class="fas fa-phone-alt"></i> 9876987699
+                </p>
+                <p class="text-center">
+                    <i class="fas fa-envelope"></i> contact@bominos.com
+                </p>
+            </div>
+            <div class="col-lg-4 col-12 pt-lg-0 pt-3">
+                <h3 class="text-center">Our Safety Norms</h3>
+                <p class="text-center">
+                    All our Employees Wear Masks
+                    <br>
+                    Contact-less Delivery
+                    <br>
+                    Temperature checking of all employees
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
 
 
     
