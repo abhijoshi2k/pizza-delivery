@@ -8,21 +8,31 @@ require 'database_connect.php';
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Bomino's</title>
+	<title>Bomino's Pizza</title>
 
 	<!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
-    <meta name="description" content="Official website of IEEE student chapter of SIES GST, Navi Mumbai.">
-    <meta name="keywords" content="IEEE, ieee, sies, gst, siesgst, official, student, website, home">
-    <meta name="author" content="IEEE SIES GST Student Chapter">
+    <meta name="description" content="Web Development Mini-Project.">
+    <meta name="author" content="Abhishek Joshi, Vineet Iyer, Vishak Kodethur">
 
     <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#000">
+    <meta name="theme-color" content="#OD2C54">
     <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#000">
+    <meta name="msapplication-navbutton-color" content="#OD2C54">
     <!-- iOS Safari -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#OD2C54">
+
+    <!--whatsapp and fb-->
+    <meta property="og:title" content="Bomino's Pizza" />
+    <meta property="og:description" content="Web Development Mini-Project." />
+    <meta property="og:url" content="http://bominos.onlinewebshop.net/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://bominos.onlinewebshop.net/images/favicon.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="642" />
+    <meta property="og:image:height" content="642" />
+    <meta property="og:image:alt" content="Bomino's Pizza" />
 
     <!-- //Meta tag Keywords -->
     

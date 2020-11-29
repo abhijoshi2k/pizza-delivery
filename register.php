@@ -90,7 +90,7 @@ if(!loggedin())
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Register</title>
+	<title>Register | Bomino's Pizza</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
     <meta name="description" content="Official website of IEEE student chapter of SIES GST, Navi Mumbai.">
