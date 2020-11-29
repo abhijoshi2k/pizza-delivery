@@ -191,7 +191,7 @@ if(!loggedin())
 	<nav class="position-fixed topnav" id="navbar">
 
         <div class="nav-logo position-absolute">
-            <a href="#"><img src="images/15b78dc9-cf77-49fe-97f4-fe2b4e5fb36b_200x200.png" class="nav-logo-img" id="nav-logo-image" alt=""></a>
+            <a href="index.php"><img src="images/15b78dc9-cf77-49fe-97f4-fe2b4e5fb36b_200x200.png" class="nav-logo-img" id="nav-logo-image" alt=""></a>
         </div>
 
         <div class="toggle-bars position-absolute" onclick="menu();">
@@ -201,21 +201,39 @@ if(!loggedin())
         </div>
 
         <ul class="navbar-ul mb-0" id="navbar-ul">
-            <a href="#" class="navbar-link">
-                <li class="navbar-list active"><div class="navbar-link-text d-inline">Home</div></li>
+            <a href="index.php" class="navbar-link">
+                <li class="navbar-list"><div class="navbar-link-text d-inline">Home</div></li>
             </a>
-            <a href="#" class="navbar-link">
-                <li class="navbar-list"><div class="navbar-link-text d-inline">About Us</div></li>
+            <a href="menu.php" class="navbar-link">
+                <li class="navbar-list"><div class="navbar-link-text d-inline">Our Menu</div></li>
             </a>
-            <a href="#" class="navbar-link">
-                <li class="navbar-list"><div class="navbar-link-text d-inline">Courses</div></li>
+            <a href="order.php" class="navbar-link">
+                <li class="navbar-list"><div class="navbar-link-text d-inline">Order Now</div></li>
             </a>
-            <a href="#" class="navbar-link">
-                <li class="navbar-list"><div class="navbar-link-text d-inline">Login</div></li>
-            </a>
-            <a href="#" class="navbar-link" id="reg-link">
-                <li class="navbar-list" id="reg-list"><div class="navbar-link-text d-inline">Register</div></li>
-            </a>
+            <?php
+            if(loggedin())
+            {
+                ?>
+                <a href="view_orders.php" class="navbar-link">
+                    <li class="navbar-list"><div class="navbar-link-text d-inline">View Orders</div></li>
+                </a>
+                <a href="profile.php" class="navbar-link">
+                    <li class="navbar-list"><div class="navbar-link-text d-inline">Profile</div></li>
+                </a>
+                <a href="logout.php" class="navbar-link" id="reg-link">
+                    <li class="navbar-list" id="reg-list"><div class="navbar-link-text d-inline">Logout</div></li>
+                </a>
+                <?php
+            }
+            else
+            {
+                ?>
+                <a href="login.php" class="navbar-link" id="reg-link">
+                    <li class="navbar-list" id="reg-list"><div class="navbar-link-text d-inline">Login</div></li>
+                </a>
+                <?php
+            }
+            ?>
         </ul>
 
     </nav>
