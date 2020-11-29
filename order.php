@@ -315,6 +315,42 @@ else if(isset($_SESSION['insert_id'],$_SESSION['ts'],$_SESSION['number_of_items'
 			</div>
 		<!-- ORDER SUCCESS SECTION -->
 
+		<footer class="footer pt-4 pb-2">
+		    <div class="container text-white">
+		        <div class="row">
+		            <div class="col-lg-4 col-sm-6 col-12">
+		                <h3 class="text-center">Our Branches</h3>
+		                <p class="text-center">
+		                    Mumbai
+		                    <br>
+		                    Chennai
+		                    <br>
+		                    Bangalore
+		                </p>
+		            </div>
+		            <div class="col-lg-4 col-sm-6 col-12 pt-sm-0 pt-3">
+		                <h3 class="text-center">Reach Out to Us</h3>
+		                <p class="text-center pt-2">
+		                    <i class="fas fa-phone-alt"></i> 9876987699
+		                </p>
+		                <p class="text-center">
+		                    <i class="fas fa-envelope"></i> contact@bominos.com
+		                </p>
+		            </div>
+		            <div class="col-lg-4 col-12 pt-lg-0 pt-3">
+		                <h3 class="text-center">Our Safety Norms</h3>
+		                <p class="text-center">
+		                    All our Employees Wear Masks
+		                    <br>
+		                    Contact-less Delivery
+		                    <br>
+		                    Temperature checking of all employees
+		                </p>
+		            </div>
+		        </div>
+		    </div>
+		</footer>
+
 		<script type="text/javascript">
         window.onresize = function() {
             let x = document.getElementById("navbar");
@@ -563,7 +599,7 @@ else if(isset($_SESSION['insert_id'],$_SESSION['ts'],$_SESSION['number_of_items'
 
 
 		<?php
-		$query = "SELECT id, item, cost FROM `menu` WHERE included=1";
+		$query = "SELECT * FROM `menu` WHERE included=1";
 		$query_run = mysqli_query($connect,$query);
 		$count = 1;
 
@@ -615,25 +651,41 @@ else if(isset($_SESSION['insert_id'],$_SESSION['ts'],$_SESSION['number_of_items'
 											<?php
 											while($menu_item = mysqli_fetch_assoc($query_run))
 											{
+												if($menu_item['type'] == '1')
+												{
+													$ds = 'success';
+												}
+												else
+												{
+													$ds = 'danger';
+												}
+												$type = '<span class="fa-stack text-'.$ds.'" style="font-size: 0.5rem;"><i class="far fa-square fa-stack-2x"></i><i class="fas fa-circle fa-stack-1x"></i></span>';
 												?>
-
-												<tr class="tableitems">
-													<td>
+												<span>
+												<tr class="tableitems tableitemhover">
+													<td class="pt-2">
 														<?php echo $count; ?>
 													</td>
-													<td>
+													<td class="pt-2">
 														<?php echo $menu_item['item']; ?>
 													</td>
-													<td class="order-cost">
-														<?php echo $menu_item['cost']; ?>
+													<td class="bord-b" rowspan="2">
+														₹ <span class="order-cost"><?php echo $menu_item['cost']; ?></span>
 													</td>
-													<td>
-														<input type="checkbox" class="checkboxsize " onchange="changeInp(this.getAttribute('item')+'_q',this.checked);" name="item[]" item="<?php echo $menu_item['id']; ?>" value="<?php echo $menu_item['id']; ?>">
+													<td rowspan="2" class="bord-b">
+														<input type="checkbox" class="checkboxsize mt-2" onchange="changeInp(this.getAttribute('item')+'_q',this.checked);" name="item[]" item="<?php echo $menu_item['id']; ?>" value="<?php echo $menu_item['id']; ?>">
 													</td>
-													<td>
-														<input type="number" class="order-quantity form-control" onkeyup="tot();" onchange="tot();" name="<?php echo $menu_item['id'].'_q'; ?>" id="<?php echo $menu_item['id'].'_q'; ?>" value="0" disabled required>
+													<td rowspan="2" class="bord-b">
+														<input type="number" class="order-quantity form-control mt-2" onkeyup="tot();" onchange="tot();" name="<?php echo $menu_item['id'].'_q'; ?>" id="<?php echo $menu_item['id'].'_q'; ?>" value="0" disabled required>
 													</td>
 												</tr>
+
+
+												<tr class="orderingdiv">
+			                                        <td class="pb-2 text-center"><?php echo $type; ?></td>
+			                                        <td class="pb-2"><small><?php echo $menu_item['ingredients']; ?></small></td>
+			                                        <td class="pb-2"></td>
+			                                    </tr>
 
 												<?php
 												$count++;
@@ -657,7 +709,7 @@ else if(isset($_SESSION['insert_id'],$_SESSION['ts'],$_SESSION['number_of_items'
 
 							<div class="col-12 ordersuccesstotalcol">
 								<div class="ordersuccesstotal">
-										<p class="mb-0"><b>Grand Total: <span id="grand-tot">0</span></b></p>
+										<p class="mb-0"><b>Grand Total: ₹ <span id="grand-tot">0</span></b></p>
 								</div>
 							</div>
 
@@ -692,6 +744,42 @@ else if(isset($_SESSION['insert_id'],$_SESSION['ts'],$_SESSION['number_of_items'
 					</div>
 				</div>
 			</div>
+
+			<footer class="footer pt-4 pb-2">
+			    <div class="container text-white">
+			        <div class="row">
+			            <div class="col-lg-4 col-sm-6 col-12">
+			                <h3 class="text-center">Our Branches</h3>
+			                <p class="text-center">
+			                    Mumbai
+			                    <br>
+			                    Chennai
+			                    <br>
+			                    Bangalore
+			                </p>
+			            </div>
+			            <div class="col-lg-4 col-sm-6 col-12 pt-sm-0 pt-3">
+			                <h3 class="text-center">Reach Out to Us</h3>
+			                <p class="text-center pt-2">
+			                    <i class="fas fa-phone-alt"></i> 9876987699
+			                </p>
+			                <p class="text-center">
+			                    <i class="fas fa-envelope"></i> contact@bominos.com
+			                </p>
+			            </div>
+			            <div class="col-lg-4 col-12 pt-lg-0 pt-3">
+			                <h3 class="text-center">Our Safety Norms</h3>
+			                <p class="text-center">
+			                    All our Employees Wear Masks
+			                    <br>
+			                    Contact-less Delivery
+			                    <br>
+			                    Temperature checking of all employees
+			                </p>
+			            </div>
+			        </div>
+			    </div>
+			</footer>
 
 		<!-- PLACE ORDER SECTION -->
 
@@ -736,7 +824,7 @@ else if(isset($_SESSION['insert_id'],$_SESSION['ts'],$_SESSION['number_of_items'
 
 	else
 	{
-		header('Location: login.php');
+		header('Location: login.php?last='.urlencode('order.php'));
 	}
 
 	?>

@@ -8,9 +8,9 @@ require 'database_connect.php';
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Bomino's</title>
+    <title>Bomino's</title>
 
-	<!-- Meta tag Keywords -->
+    <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
     <meta name="description" content="Official website of IEEE student chapter of SIES GST, Navi Mumbai.">
@@ -172,127 +172,79 @@ require 'database_connect.php';
 
         <!--row 1-->
         <div class="container">
-            <div class="row col-sm-8 col-12 mx-auto border rounded p-3 main_row">
-                <!--Image and Name Content-->
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 my-auto mx-auto main_box">
-                    <div class="mx-auto pizza_name">
-                        <b>Veg Extravanza</b>
-                    </div>
-                    <div class="topline">
-                        
-                    </div>
-                    <div class="image_box">
-                        <img src="images/pizza1.png" class="image">
-                        <div title="Cheese, Jalapeno, Black Olives, Capsicum" data-toggle="tooltip" data-placement="bottom">
-                            <div class="image_overlay">
-                                <div class="overlay_text">
-                                    <span><b>Cheese and 3 more</b></span>
+            <?php
+
+            $query = "SELECT * FROM menu WHERE included = 1";
+
+            $query_run = mysqli_query($connect,$query);
+
+            $count = 0;
+            while($row = mysqli_fetch_assoc($query_run))
+            {
+                $count++;
+
+                $non = '';
+                $non1 = '';
+                if($row['type'] == '0')
+                {
+                    $non = 'non-';
+                    $non1 = 'Non-';
+                }
+
+                $arr = explode(", ",$row['ingredients']);
+
+                $more = count($arr) - 1;
+                ?>
+                <div class="row col-sm-8 col-12 mx-auto border rounded p-3 main_row">
+                    <!--Image and Name Content-->
+                    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 my-auto mx-auto main_box">
+                        <div class="mx-auto pizza_name <?php echo $non; ?>veg-pizza">
+                            <b><?php echo $row['item'] ?></b>
+                        </div>
+                        <div class="topline">
+                            
+                        </div>
+                        <div class="image_box">
+                            <img src="<?php echo $row['img_src'] ?>" class="image">
+                            <div title="<?php echo $row['ingredients'] ?>" data-toggle="tooltip" data-placement="bottom">
+                                <div class="image_overlay">
+                                    <div class="overlay_text">
+                                        <span><b><?php echo $arr[0]; ?> and <?php echo $more; ?> more</b></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="bottomline">
+                            
+                        </div>
                     </div>
-                    <div class="bottomline">
-                        
+                    <!--Middle Border Separator-->
+                    <div class="col-xl-2 col-lg-2 col-md-2 middle_line">
+                        <div class="line">
+                            
+                        </div>
+                    </div>
+                    <!--Details-->
+                    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 details_box ">
+                        <div class="mt-lg-4">
+                            <div>
+                                <b class="my-auto">Price:<span><?php echo $row['cost'] ?></span></b>
+                            </div><br/>
+                            <div>
+                                <p><b>15 inch per peice.</b></p>
+                                <p><b><span><?php echo $row['ingredients'] ?></span></b></p>
+                                <p class="<?php echo $non; ?>veg-pizza"><span style="font-size: 0.5em;" class="fa-stack"><i class="far fa-square fa-stack-2x"></i><i class="fas fa-circle fa-stack-1x"></i></span> <?php echo $non1; ?>Veg</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!--Middle Border Separator-->
-                <div class="col-xl-2 col-lg-2 col-md-2 middle_line">
-                    <div class="line">
-                        
-                    </div>
-                </div>
-                <!--Details-->
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 details_box">
-                    <div>
-                        <b>Price:<span>250</span></b>
-                    </div><br/>
-                    <div>
-                        <button class="btn btn-outline-warning">ORDER</button>
-                    </div>
-                </div>
-            </div>
+                <?php
+
+            }
+
+            ?>
         
-            <!--row 2-->
-            <div class="row col-sm-8 col-12 mx-auto border rounded p-3 main_row">
-                <!--Image and Name Content-->
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 my-auto mx-auto main_box">
-                    <div class="mx-auto pizza_name">
-                        <b>Veg Extravanza</b>
-                    </div>
-                    <div class="topline">
-                        
-                    </div>
-                    <div class="image_box">
-                        <img src="images/pizza1.png" class="image">
-                        <div title="Cheese, Jalapeno, Black Olives, Capsicum" data-toggle="tooltip" data-placement="bottom">
-                            <div class="image_overlay">
-                                <div class="overlay_text">
-                                    <span><b>Cheese and 3 more</b></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bottomline">
-                        
-                    </div>
-                </div>
-                <!--Middle Border Separator-->
-                <div class="col-xl-2 col-lg-2 col-md-2 middle_line">
-                    <div class="line">
-                        
-                    </div>
-                </div>
-                <!--Details-->
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 details_box">
-                    <div>
-                        <b>Price:<span>250</span></b>
-                    </div><br/>
-                    <div>
-                        <button class="btn btn-outline-warning">ORDER</button>
-                    </div>
-                </div>
-            </div>
-        
-            <!--row 3-->
-            <div class="row col-sm-8 col-12 mx-auto border rounded p-3 main_row">
-                <!--Image and Name Content-->
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 my-auto mx-auto main_box">
-                    <div class="mx-auto pizza_name">
-                        <b>Veg Extravanza</b>
-                    </div>
-                    <div class="topline">
-                        
-                    </div>
-                    <div class="image_box">
-                        <img src="images/pizza1.png" class="image">
-                        <div title="Cheese, Jalapeno, Black Olives, Capsicum" data-toggle="tooltip" data-placement="bottom">
-                            <div class="image_overlay">
-                                <div class="overlay_text">
-                                    <span><b>Cheese and 3 more</b></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bottomline">
-                        
-                    </div>
-                </div>
-                <!--Middle Border Separator-->
-                <div class="col-xl-2 col-lg-2 col-md-2 middle_line">
-                    <div class="line">
-                        
-                    </div>
-                </div>
-                <!--Details-->
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 details_box">
-                    <div>
-                        <b>Price:<span>250</span></b>
-                    </div><br/>
-                    <div>
-                        <button class="btn btn-outline-warning">ORDER</button>
-                    </div>
-                </div>
-            </div>
+            
         </div>
 
     </div>  
@@ -301,7 +253,41 @@ require 'database_connect.php';
 
 
 
-
+<footer class="footer pt-4 pb-2">
+    <div class="container text-white">
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 col-12">
+                <h3 class="text-center">Our Branches</h3>
+                <p class="text-center">
+                    Mumbai
+                    <br>
+                    Chennai
+                    <br>
+                    Bangalore
+                </p>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-12 pt-sm-0 pt-3">
+                <h3 class="text-center">Reach Out to Us</h3>
+                <p class="text-center pt-2">
+                    <i class="fas fa-phone-alt"></i> 9876987699
+                </p>
+                <p class="text-center">
+                    <i class="fas fa-envelope"></i> contact@bominos.com
+                </p>
+            </div>
+            <div class="col-lg-4 col-12 pt-lg-0 pt-3">
+                <h3 class="text-center">Our Safety Norms</h3>
+                <p class="text-center">
+                    All our Employees Wear Masks
+                    <br>
+                    Contact-less Delivery
+                    <br>
+                    Temperature checking of all employees
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
 
 
 
@@ -345,3 +331,4 @@ require 'database_connect.php';
 
 </body>
 </html>
+

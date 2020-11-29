@@ -413,10 +413,19 @@ textarea
 	padding-left: 2%;
 	padding-top: 3%;
 	font-family: Constantia;/*"RF-Barbariska", baskerville, dealers, timberline, rigatoni*/
-	color: #6DF21F;/*#ADD911;*/
 	font-size: 130%;
 	height: 10%;
 	transition: 0.5s ease-in-out;
+}
+
+.veg-pizza
+{
+	color: #00ff0d;
+}
+
+.non-veg-pizza
+{
+	color: #ab050e;
 }
 
 .main_box .topline{
@@ -522,8 +531,12 @@ textarea
 	opacity: 1;	
 }
 
-.main_row:hover .main_box .pizza_name{
+.main_row:hover .main_box .veg-pizza{
 	color: #4FB017;
+}
+
+.main_row:hover .main_box .non-veg-pizza{
+	color: #ab050e;
 }
 
 .main_row .main_box:hover{
@@ -1605,7 +1618,7 @@ textarea
 	font-size: 130%;
 }
 
-.ordersuccesstable th, .tableitems td{
+.ordersuccesstable th{
 	padding: 2%;
 	border-bottom: 1px solid #ddd;
 
@@ -1927,11 +1940,11 @@ ol .listdetailsli::marker{
 	transition: 0.1s ease-in-out;
 }
 
-.tableitemhover{
+.tableitemhover, .tableitemhover + tr{
 	transition: 0.1s ease-in-out;
 }
 
-.tableitemhover:hover{
+.tableitemhover:hover, .tableitemhover:hover + tr{
 	background-color: #DDDDDD;
 		
 }
@@ -1945,3 +1958,8 @@ ol .listdetailsli::marker{
 }
 
 /*NEW*/
+
+.bord-b
+{
+	border-bottom: 1px solid #ddd;
+}

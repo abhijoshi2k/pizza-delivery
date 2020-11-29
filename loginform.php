@@ -10,6 +10,12 @@ if(isset($_POST['username']) && isset($_POST['password']))
 		$query = "SELECT id FROM users WHERE username = '".mysqli_real_escape_string($connect,$username)."' AND password = '".mysqli_real_escape_string($connect,$password_hash)."'";
 		if($query_run = mysqli_query($connect,$query))
 		{
+			$last = 'login.php';
+			if(isset($_POST['last']) && !empty($_POST['last']) && file_exists($_POST['last']))
+			{
+				$last = $_POST['last'];
+			}
+
 			$query_num_rows=mysqli_num_rows($query_run);
 			if($query_num_rows!=1)
 			{
@@ -27,7 +33,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
 						while($user_id=mysqli_fetch_assoc($query_run))
 						{
 							$_SESSION['user_id']=$user_id['id'];
-							header('Location: login.php');
+							header('Location: '.$last);
 						}
 					}
 				}
@@ -37,7 +43,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
 				while($user_id=mysqli_fetch_assoc($query_run))
 				{
 					$_SESSION['user_id']=$user_id['id'];
-					header('Location: login.php');
+					header('Location: '.$last);
 				}
 			}
 		}
@@ -131,6 +137,16 @@ else if(isset($_SESSION['flag']) && $_SESSION['flag']=='9')
 						</div>
 						<div class="card-text text-center">
 							<form action="<?php echo $current_file; ?>" method="POST">
+								<?php
+
+								if(isset($_GET['last']) && !empty($_GET['last']))
+								{
+									?>
+									<input type="hidden" name="last" id="" value="<?php echo $_GET['last']; ?>">
+									<?php
+								}
+								
+								?>
 								<p class="redpara"><label for="username"><b><i class="fa fa-user" aria-hidden="true"></i> Username / Mobile Number:</b></label></p>
 								<input type="text" id="username" name="username" class="form-control logininput mx-auto" placeholder="Username/Mobile Number" autocomplete="off" required>
 								<br/>
