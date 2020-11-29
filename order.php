@@ -667,13 +667,13 @@ else if(isset($_SESSION['insert_id'],$_SESSION['ts'],$_SESSION['number_of_items'
 													<td class="pt-2">
 														<?php echo $menu_item['item']; ?>
 													</td>
-													<td class="bord-b" rowspan="2">
+													<td class="bord-b">
 														₹ <span class="order-cost"><?php echo $menu_item['cost']; ?></span>
 													</td>
-													<td rowspan="2" class="bord-b">
+													<td class="bord-b">
 														<input type="checkbox" class="checkboxsize mt-2" onchange="changeInp(this.getAttribute('item')+'_q',this.checked);" name="item[]" item="<?php echo $menu_item['id']; ?>" value="<?php echo $menu_item['id']; ?>">
 													</td>
-													<td rowspan="2" class="bord-b">
+													<td class="bord-b">
 														<input type="number" class="order-quantity form-control mt-2" onkeyup="tot();" onchange="tot();" name="<?php echo $menu_item['id'].'_q'; ?>" id="<?php echo $menu_item['id'].'_q'; ?>" value="0" disabled required>
 													</td>
 												</tr>
@@ -681,8 +681,7 @@ else if(isset($_SESSION['insert_id'],$_SESSION['ts'],$_SESSION['number_of_items'
 
 												<tr class="orderingdiv">
 			                                        <td class="pb-2 text-center"><?php echo $type; ?></td>
-			                                        <td class="pb-2"><small><?php echo $menu_item['ingredients']; ?></small></td>
-			                                        <td class="pb-2"></td>
+			                                        <td class="pb-2 text-left" colspan="4"><small><?php echo $menu_item['ingredients']; ?></small></td>
 			                                    </tr>
 
 												<?php
