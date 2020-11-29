@@ -28,7 +28,7 @@ require 'database_connect.php';
     <meta property="og:description" content="Web Development Mini-Project." />
     <meta property="og:url" content="http://bominos.onlinewebshop.net/" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="http://bominos.onlinewebshop.net/images/favicon.png" />
+    <meta property="og:image" content="https://abhijoshi2k.github.io/pizza-delivery/images/favicon.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="642" />
     <meta property="og:image:height" content="642" />
