@@ -185,7 +185,7 @@ require 'database_connect.php';
             <p>Make your day by ordering our fantastic pizzas right at your doorstep.</p>
             <p>What are you waiting for?</p>
             <div class="pb-5">
-                <div class="get-started bg-white"><h4>Order Now</h4><button class = "yellow-button"><i class = "fa fa-angle-right"></i></button></div>
+                <div class="get-started bg-white" onclick="location.href = 'http://bominos.onlinewebshop.net/order.php';"><h4>Order Now</h4><button class = "yellow-button"><i class = "fa fa-angle-right"></i></button></div>
             </div>
         </div>
     </div>
