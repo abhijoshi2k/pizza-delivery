@@ -109,7 +109,7 @@ require 'database_connect.php';
             else
             {
                 document.getElementById('nav-logo-image').style.marginTop = '6px';
-                document.getElementById('nav-logo-image').style.height = '40px';
+                document.getElementById('nav-logo-image').style.height = '48px';
                 document.getElementById('navbar-ul').style.marginTop = '60px';
                 document.getElementById('navbar').style.height = 'auto';
             }

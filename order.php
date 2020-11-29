@@ -171,7 +171,7 @@ else if(isset($_SESSION['insert_id'],$_SESSION['ts'],$_SESSION['number_of_items'
 	            else
 	            {
 	                document.getElementById('nav-logo-image').style.marginTop = '6px';
-	                document.getElementById('nav-logo-image').style.height = '40px';
+	                document.getElementById('nav-logo-image').style.height = '48px';
 	                document.getElementById('navbar-ul').style.marginTop = '60px';
 	                document.getElementById('navbar').style.height = 'auto';
 	            }
@@ -487,7 +487,7 @@ else if(isset($_SESSION['insert_id'],$_SESSION['ts'],$_SESSION['number_of_items'
 		            else
 		            {
 		                document.getElementById('nav-logo-image').style.marginTop = '6px';
-		                document.getElementById('nav-logo-image').style.height = '40px';
+		                document.getElementById('nav-logo-image').style.height = '48px';
 		                document.getElementById('navbar-ul').style.marginTop = '60px';
 		                document.getElementById('navbar').style.height = 'auto';
 		            }

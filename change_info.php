@@ -97,7 +97,7 @@ require 'core_login.php';
             else
             {
                 document.getElementById('nav-logo-image').style.marginTop = '6px';
-                document.getElementById('nav-logo-image').style.height = '40px';
+                document.getElementById('nav-logo-image').style.height = '48px';
                 document.getElementById('navbar-ul').style.marginTop = '60px';
                 document.getElementById('navbar').style.height = 'auto';
             }
@@ -201,7 +201,7 @@ if(isset($_GET['change']) || isset($_POST['new_username']) || isset($_POST['new_
 		{
 			?>
 			<script type="text/javascript">
-				alert('The username does not exist!');
+				alert('The Username / Mobile Number does not exist!');
 			</script>
 			<?php
 			$_SESSION['flag']='0';
@@ -655,7 +655,7 @@ if(!loggedin() && ((isset($_POST['username']) && !empty($_POST['username'])) || 
 			$query_num_rows=mysqli_num_rows($query_run);
 			if($query_num_rows!=1)
 			{
-				$contact=md5($username);
+				$contact=$username;
 				$query = "SELECT id, security_question, answer FROM users WHERE contact='".mysqli_real_escape_string($connect,$contact)."'";
 				if($query_run = mysqli_query($connect,$query))
 				{
