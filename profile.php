@@ -254,7 +254,7 @@ if(loggedin())
 	                        </ul>
 	                        <div class="carousel-inner">
 	                            <div class="carousel-item active">
-	                                <img class="profilepizzaimage" src="images/pizzalog.jpg">
+	                                <img class="profilepizzaimage" src="images/pizzaburst.jpg">
 	                                
 	                            </div>
 	                            <div class="carousel-item">
