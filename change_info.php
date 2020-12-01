@@ -811,7 +811,25 @@ if(!loggedin() && ((isset($_POST['username']) && !empty($_POST['username'])) || 
 								if($query_run = mysqli_query($connect,$query))
 								{
 									session_destroy();
-									echo '<p class="pt-5 mt-5 container">Password has been reset.<br><a href="login.php">Login here</a></p>';
+									?>
+									<div class="resetsuccessbg">
+										<div class="container-fluid h-100">
+											<div class="row align-items-center h-100">
+												<div class="col-12">
+													<div class="card mx-auto resetcard">
+														<div class="card-title text-center resetcardtitle">
+															<h2 class="title">Password Has Been Reset</h2>
+														</div>
+														<div class="card-text text-center">
+															<br/>
+															<a href="login.php" class="resetlinkstyle">Login here</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<?php
 								}
 								else
 								{
